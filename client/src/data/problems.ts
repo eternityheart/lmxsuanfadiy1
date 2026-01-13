@@ -704,7 +704,24 @@ export const problems: Problem[] = [
       {
         title: '第4步：遍历当前数字对应的字母',
         description: '获取映射，逐个尝试',
-        code: 'private void backtrack(String digits, int index, \n                       StringBuilder path, List<String> result) {\n    if (index == digits.length()) {\n        result.add(path.toString());\n        return;\n    }\n    \n    // 获取当前数字对应的字母\n    char digit = digits.charAt(index);\n    String letters = mapping[digit - \\'0\\'];\n    \n    // 遍历每个字母\n    for (char c : letters.toCharArray()) {\n        path.append(c);                    // 做选择\n        backtrack(digits, index + 1, path, result);  // 递归\n        path.deleteCharAt(path.length() - 1);        // 撤销\n    }\n}',
+        code: `private void backtrack(String digits, int index, 
+                       StringBuilder path, List<String> result) {
+    if (index == digits.length()) {
+        result.add(path.toString());
+        return;
+    }
+    
+    // 获取当前数字对应的字母
+    char digit = digits.charAt(index);
+    String letters = mapping[digit - '0'];
+    
+    // 遍历每个字母
+    for (char c : letters.toCharArray()) {
+        path.append(c);                    // 做选择
+        backtrack(digits, index + 1, path, result);  // 递归
+        path.deleteCharAt(path.length() - 1);        // 撤销
+    }
+}`,
         explanation: '🎯 关键点：\\n1. digit - \\'0\\' 将字符转为数字\\n2. 每层的选择范围由当前数字决定\\n3. StringBuilder的append/deleteCharAt比String的+效率高' 
       }
     ],
