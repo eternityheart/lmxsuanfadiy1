@@ -722,7 +722,7 @@ export const problems: Problem[] = [
         path.deleteCharAt(path.length() - 1);        // 撤销
     }
 }`,
-        explanation: '🎯 关键点：\\n1. digit - \\'0\\' 将字符转为数字\\n2. 每层的选择范围由当前数字决定\\n3. StringBuilder的append/deleteCharAt比String的+效率高' 
+        explanation: `🎯 关键点：\n1. digit - '0' 将字符转为数字\n2. 每层的选择范围由当前数字决定\n3. StringBuilder的append/deleteCharAt比String的+效率高`
       }
     ],
     interview: {
