@@ -13,27 +13,27 @@ export const sortingProblems: Problem[] = [
       { input: 'arr = [64, 34, 25, 12, 22]', output: '[12, 22, 25, 34, 64]', explanation: '通过多轮比较和交换，将数组从小到大排序' }
     ],
     thinkingGuide: [
-      { 
-        step: 1, 
-        question: '你见过水里的气泡吗？大气泡会怎样？', 
+      {
+        step: 1,
+        question: '🛁 你见过水里的气泡吗？大气泡会怎样？',
         hint: '大气泡会慢慢浮到水面上',
         answer: '冒泡排序就像气泡上浮！大的数字就像大气泡，会慢慢"浮"到数组的右边（末尾）。我们每次比较相邻的两个数，如果左边的比右边的大，就交换它们的位置。'
       },
-      { 
-        step: 2, 
-        question: '如果有数组 [5, 3, 8, 1]，第一次比较谁和谁？', 
+      {
+        step: 2,
+        question: '🔢 如果有数组 [5, 3, 8, 1]，第一次比较谁和谁？',
         hint: '从最左边开始，比较第1个和第2个',
         answer: '比较5和3。因为5>3，所以交换，变成[3, 5, 8, 1]。然后比较5和8，5<8不用交换。再比较8和1，8>1交换，变成[3, 5, 1, 8]。一轮下来，最大的8已经"浮"到最右边了！'
       },
-      { 
-        step: 3, 
-        question: '一轮结束后，数组变成[3, 5, 1, 8]，还需要继续吗？', 
+      {
+        step: 3,
+        question: '🔄 一轮结束后，数组变成[3, 5, 1, 8]，还需要继续吗？',
         hint: '8已经在正确位置了，但3、5、1还没排好',
         answer: '继续！第二轮：比较3和5（不换）→比较5和1（交换）→得到[3, 1, 5, 8]。第三轮：比较3和1（交换）→得到[1, 3, 5, 8]。排好了！'
       },
-      { 
-        step: 4, 
-        question: '冒泡排序的核心思想是什么？', 
+      {
+        step: 4,
+        question: '💡 冒泡排序的核心思想是什么？',
         hint: '每一轮都会把一个最大的数"冒泡"到正确位置',
         answer: '核心思想：通过相邻元素的比较和交换，每一轮都把当前未排序部分的最大值"冒泡"到末尾。n个数需要n-1轮，每轮比较次数逐渐减少。'
       }
@@ -71,7 +71,7 @@ export const sortingProblems: Problem[] = [
       }
     ],
     interview: {
-      approach: '冒泡排序的核心思想是通过相邻元素的比较和交换，让大的元素逐渐冒泡到数组末尾。时间复杂度是O(n²)，因为有两层嵌套循环。可以通过添加swapped标记来优化，如果某轮没有交换就提前结束。',
+      approach: '【面试回答模板】\\n\\n冒泡排序的核心思想是**通过相邻元素的比较和交换**，让大的元素逐渐"冒泡"到数组末尾。\\n\\n1. **过程**：外层循环控制轮数（n-1轮），内层循环进行相邻比较和交换。\\n2. **优化**：添加 `swapped` 标记，如果某一轮没有任何交换，说明数组已经有序，提前结束。\\n3. **特点**：稳定排序，空间 O(1)，但时间 O(n²) 较慢，一般只用于教学或极小数据量。',
       timeComplexity: 'O(n²)：两层循环，每层最多n次',
       spaceComplexity: 'O(1)：只用了几个临时变量',
       followUp: [
@@ -91,27 +91,27 @@ export const sortingProblems: Problem[] = [
       { input: 'arr = [64, 25, 12, 22, 11]', output: '[11, 12, 22, 25, 64]', explanation: '每次选出最小的数放到前面' }
     ],
     thinkingGuide: [
-      { 
-        step: 1, 
-        question: '如果让你给5个小朋友按身高排队，你会怎么做？', 
+      {
+        step: 1,
+        question: '如果让你给5个小朋友按身高排队，你会怎么做？',
         hint: '可以每次找出最矮的那个',
         answer: '选择排序就像这样！每次从还没排好的小朋友中，找出最矮的那个，让他站到队伍最前面。然后在剩下的人中再找最矮的，站到第二个位置...以此类推。'
       },
-      { 
-        step: 2, 
-        question: '数组[64, 25, 12, 22, 11]中，最小的数是哪个？在哪个位置？', 
+      {
+        step: 2,
+        question: '数组[64, 25, 12, 22, 11]中，最小的数是哪个？在哪个位置？',
         hint: '遍历整个数组，记录最小值的位置',
         answer: '最小的是11，在位置4（从0开始数）。找到后，把11和位置0的64交换，数组变成[11, 25, 12, 22, 64]。'
       },
-      { 
-        step: 3, 
-        question: '现在11已经在正确位置了，接下来怎么做？', 
+      {
+        step: 3,
+        question: '现在11已经在正确位置了，接下来怎么做？',
         hint: '在[25, 12, 22, 64]中找最小的',
         answer: '在位置1到4中找最小的，是12（位置2）。把12和位置1的25交换，得到[11, 12, 25, 22, 64]。继续这个过程直到排完。'
       },
-      { 
-        step: 4, 
-        question: '选择排序和冒泡排序有什么区别？', 
+      {
+        step: 4,
+        question: '选择排序和冒泡排序有什么区别？',
         hint: '想想交换的次数',
         answer: '选择排序每轮只交换一次（找到最小值后才交换），而冒泡排序可能交换多次。选择排序的交换次数更少，但比较次数一样多。'
       }
@@ -169,27 +169,27 @@ export const sortingProblems: Problem[] = [
       { input: 'arr = [5, 2, 4, 6, 1, 3]', output: '[1, 2, 3, 4, 5, 6]', explanation: '像整理扑克牌一样，逐个插入到正确位置' }
     ],
     thinkingGuide: [
-      { 
-        step: 1, 
-        question: '你打牌时是怎么整理手中的牌的？', 
+      {
+        step: 1,
+        question: '你打牌时是怎么整理手中的牌的？',
         hint: '每拿到一张新牌，就插到合适的位置',
         answer: '插入排序就像整理扑克牌！假设左手已经有几张排好序的牌，每次右手拿到一张新牌，就从右往左找，找到合适的位置插进去。'
       },
-      { 
-        step: 2, 
-        question: '数组[5, 2, 4, 6, 1, 3]，第一张牌5已经"在手上"了，接下来处理谁？', 
+      {
+        step: 2,
+        question: '数组[5, 2, 4, 6, 1, 3]，第一张牌5已经"在手上"了，接下来处理谁？',
         hint: '从第二个元素开始',
         answer: '处理2。把2拿起来（保存到临时变量），然后和左边的5比较。2<5，所以5往右移一位，2插到5原来的位置。变成[2, 5, 4, 6, 1, 3]。'
       },
-      { 
-        step: 3, 
-        question: '现在处理4，应该插到哪里？', 
+      {
+        step: 3,
+        question: '现在处理4，应该插到哪里？',
         hint: '4比5小，比2大',
         answer: '4拿起来，和5比较，4<5，5右移。再和2比较，4>2，停！4插到2和5之间。变成[2, 4, 5, 6, 1, 3]。'
       },
-      { 
-        step: 4, 
-        question: '插入排序什么时候效率最高？', 
+      {
+        step: 4,
+        question: '插入排序什么时候效率最高？',
         hint: '想想如果数组已经基本有序会怎样',
         answer: '当数组基本有序时，插入排序效率最高！因为每个元素只需要比较很少几次就能找到位置。这是插入排序的优势。'
       }
@@ -247,27 +247,27 @@ export const sortingProblems: Problem[] = [
       { input: 'arr = [10, 7, 8, 9, 1, 5]', output: '[1, 5, 7, 8, 9, 10]', explanation: '通过分治法快速排序' }
     ],
     thinkingGuide: [
-      { 
-        step: 1, 
-        question: '如果让你把一群人按身高分成两组，你会怎么做？', 
+      {
+        step: 1,
+        question: '🤔 如果让你把一群人按身高分成两组，你会怎么做？',
         hint: '找一个人当标准',
         answer: '快速排序就是这样！选一个人当"基准"，比他矮的站左边，比他高的站右边。然后对左边和右边分别再做同样的事情。'
       },
-      { 
-        step: 2, 
-        question: '数组[10, 7, 8, 9, 1, 5]，如果选最后一个元素5作为基准，怎么分？', 
+      {
+        step: 2,
+        question: '🔪 数组[10, 7, 8, 9, 1, 5]，如果选最后一个元素5作为基准，怎么分？',
         hint: '比5小的放左边，比5大的放右边',
         answer: '遍历数组，1比5小放左边，7、8、9、10都比5大放右边。结果：[1, 5, 7, 8, 9, 10]，5已经在正确位置了！'
       },
-      { 
-        step: 3, 
-        question: '分完之后，左边[1]和右边[7, 8, 9, 10]怎么处理？', 
+      {
+        step: 3,
+        question: '🔄 分完之后，左边[1]和右边[7, 8, 9, 10]怎么处理？',
         hint: '递归',
         answer: '递归！左边只有一个元素，不用排了。右边继续选基准、分区、递归...直到所有部分都只剩一个元素。'
       },
-      { 
-        step: 4, 
-        question: '快速排序的时间复杂度是多少？', 
+      {
+        step: 4,
+        question: '⏳ 快速排序的时间复杂度是多少？',
         hint: '取决于基准的选择',
         answer: '平均O(nlogn)，最坏O(n²)。最坏情况是每次选的基准都是最大或最小值，导致分区极不平衡。'
       }
@@ -305,7 +305,7 @@ export const sortingProblems: Problem[] = [
       }
     ],
     interview: {
-      approach: '快速排序使用分治法，选择一个基准值，将数组分成小于基准和大于基准两部分，然后递归排序。平均时间复杂度O(nlogn)，是实际应用中最快的排序算法之一。',
+      approach: '【面试回答模板】\\n\\n快速排序使用**分治法**。\\n\\n1. **分区 (Partition)**：选择一个基准值 (Pivot)，将数组分成两部分，小于基准的在左边，大于基准的在右边。\\n2. **递归 (Recursion)**：对左右两部分分别进行快速排序。\\n3. **终止**：当子数组长度为0或1时停止。\\n\\n它是原地排序，不需要额外数组，但递归需要栈空间。',
       timeComplexity: 'O(nlogn)平均，O(n²)最坏',
       spaceComplexity: 'O(logn)：递归栈空间',
       followUp: [
@@ -325,29 +325,29 @@ export const sortingProblems: Problem[] = [
       { input: 'arr = [38, 27, 43, 3, 9, 82, 10]', output: '[3, 9, 10, 27, 38, 43, 82]', explanation: '通过分治和合并实现排序' }
     ],
     thinkingGuide: [
-      { 
-        step: 1, 
-        question: '如果有两队已经按身高排好的人，怎么把他们合并成一队？', 
+      {
+        step: 1,
+        question: '👯 如果有两队已经按身高排好的人，怎么把他们合并成一队？',
         hint: '每次比较两队最前面的人',
         answer: '每次比较两队最前面的人，谁矮谁先出列。这样合并出来的队伍也是按身高排好的！'
       },
-      { 
-        step: 2, 
-        question: '数组[38, 27, 43, 3]怎么用归并排序？', 
+      {
+        step: 2,
+        question: '📚 数组[38, 27, 43, 3]怎么用归并排序？',
         hint: '先分成两半',
-        answer: '分成[38, 27]和[43, 3]。再分：[38]、[27]、[43]、[3]。然后合并：[27, 38]、[3, 43]。最后合并：[3, 27, 38, 43]。'
+        answer: '分治大法！分成[38, 27]和[43, 3]。再分：[38]、[27]、[43]、[3]。单元素天然有序。'
       },
-      { 
-        step: 3, 
-        question: '合并[27, 38]和[3, 43]的过程是怎样的？', 
-        hint: '每次取两边较小的那个',
-        answer: '比较27和3，3小，取3。比较27和43，27小，取27。比较38和43，38小，取38。最后取43。结果：[3, 27, 38, 43]。'
+      {
+        step: 3,
+        question: '🔁 怎么合并回来？',
+        hint: '两两合并',
+        answer: '合并：[27, 38]、[3, 43]。最后合并这两个有序数组：比较27和3取3，比较27和43取27... 结果：[3, 27, 38, 43]。'
       },
-      { 
-        step: 4, 
-        question: '归并排序和快速排序有什么区别？', 
+      {
+        step: 4,
+        question: '🆚 归并排序和快速排序有什么区别？',
         hint: '想想工作是在分的时候做还是合的时候做',
-        answer: '快速排序的工作在"分"的时候做（分区），归并排序的工作在"合"的时候做（合并）。归并排序是稳定的，快速排序不稳定。'
+        answer: '快速排序的工作在"分"的时候做（partition），归并排序的工作在"合"的时候做（merge）。此外，归并排序是稳定的，且需要额外 O(n) 空间。'
       }
     ],
     codeSteps: [
@@ -383,7 +383,7 @@ export const sortingProblems: Problem[] = [
       }
     ],
     interview: {
-      approach: '归并排序使用分治法，先把数组分成两半分别排序，然后合并两个有序数组。时间复杂度稳定O(nlogn)，是稳定排序。',
+      approach: '【面试回答模板】\\n\\n归并排序采用**分治策略**。\\n\\n1. **分**：将数组从中间平分，递归分解直到只剩一个元素。\\n2. **合**：将两个有序子数组合并成一个有序数组。合并时使用两个指针，每次取较小的元素放入临时数组。\\n\\n特点：稳定排序，时间复杂度严格 O(nlogn)，但缺点是需要 O(n) 的额外空间。',
       timeComplexity: 'O(nlogn)：分logn层，每层合并O(n)',
       spaceComplexity: 'O(n)：需要额外的临时数组',
       followUp: [
@@ -403,27 +403,27 @@ export const sortingProblems: Problem[] = [
       { input: 'arr = [12, 11, 13, 5, 6, 7]', output: '[5, 6, 7, 11, 12, 13]', explanation: '利用堆的性质进行排序' }
     ],
     thinkingGuide: [
-      { 
-        step: 1, 
-        question: '什么是堆？最大堆有什么特点？', 
+      {
+        step: 1,
+        question: '什么是堆？最大堆有什么特点？',
         hint: '想象一个金字塔',
         answer: '堆是一种完全二叉树。最大堆的特点是：每个节点都大于等于它的子节点，所以堆顶一定是最大值！'
       },
-      { 
-        step: 2, 
-        question: '如果堆顶是最大值，怎么用它来排序？', 
+      {
+        step: 2,
+        question: '如果堆顶是最大值，怎么用它来排序？',
         hint: '每次取出最大值放到最后',
         answer: '每次把堆顶（最大值）和数组最后一个元素交换，然后把堆的大小减1，重新调整堆。这样最大值就到了数组末尾！'
       },
-      { 
-        step: 3, 
-        question: '如何把一个数组变成最大堆？', 
+      {
+        step: 3,
+        question: '如何把一个数组变成最大堆？',
         hint: '从最后一个非叶子节点开始调整',
         answer: '从最后一个非叶子节点开始，向前遍历，对每个节点做"下沉"操作（如果比子节点小就交换）。'
       },
-      { 
-        step: 4, 
-        question: '堆排序的时间复杂度是多少？', 
+      {
+        step: 4,
+        question: '堆排序的时间复杂度是多少？',
         hint: '建堆O(n)，每次调整O(logn)',
         answer: '建堆O(n)，然后n次取出堆顶并调整，每次调整O(logn)，总共O(nlogn)。'
       }
@@ -467,6 +467,485 @@ export const sortingProblems: Problem[] = [
       followUp: [
         { question: '堆排序是稳定的吗？', answer: '不稳定，因为堆顶和末尾元素交换时可能改变相同元素的相对顺序。' },
         { question: '堆排序的优势是什么？', answer: '时间复杂度稳定O(nlogn)，空间复杂度O(1)，适合对空间要求严格的场景。' }
+      ]
+    }
+  },
+  {
+    id: 'counting-sort',
+    title: '计数排序',
+    titleEn: 'Counting Sort',
+    category: 'sorting',
+    difficulty: 'easy',
+    description: '计数排序不是基于比较的排序，而是统计每个数出现的次数，然后按顺序输出。就像数糖果：先数每种颜色有几颗，然后按颜色顺序一颗颗放出来。',
+    examples: [
+      { input: 'arr = [4, 2, 2, 8, 3, 3, 1]', output: '[1, 2, 2, 3, 3, 4, 8]', explanation: '统计每个数的个数，然后按顺序输出' }
+    ],
+    thinkingGuide: [
+      {
+        step: 1,
+        question: '🍬 如果有一堆红、黄、蓝三种颜色的糖果，怎么按颜色排好？',
+        hint: '可以先数每种颜色有几颗',
+        answer: '计数排序就像数糖果！先准备三个盒子（红、黄、蓝），把糖果按颜色放进去并数个数。然后按顺序把糖果从盒子里拿出来。'
+      },
+      {
+        step: 2,
+        question: '📊 数组[4, 2, 2, 8, 3, 3, 1]，每个数出现几次？',
+        hint: '用一个数组来记录',
+        answer: '1出现1次，2出现2次，3出现2次，4出现1次，8出现1次。用count数组记录：count[1]=1, count[2]=2, count[3]=2, count[4]=1, count[8]=1。'
+      },
+      {
+        step: 3,
+        question: '🔢 有了计数数组，怎么得到排序结果？',
+        hint: '从小到大遍历计数数组',
+        answer: '遍历count数组，count[i]是几就输出几个i。count[1]=1输出1个1，count[2]=2输出2个2...得到[1, 2, 2, 3, 3, 4, 8]。'
+      },
+      {
+        step: 4,
+        question: '💡 计数排序什么时候适用？',
+        hint: '想想如果数值范围很大会怎样',
+        answer: '计数排序适合数值范围不大的整数排序。如果范围是0-100，只需要101大小的数组。但如果范围是0-10亿，就不适合了！'
+      }
+    ],
+    codeSteps: [
+      {
+        title: '找出最大值',
+        description: '确定计数数组的大小',
+        code: `public void countingSort(int[] arr) {
+    int max = arr[0];
+    for (int num : arr) {
+        if (num > max) max = num;
+    }
+    // 创建计数数组
+    int[] count = new int[max + 1];
+}`,
+        explanation: '计数数组大小为max+1，索引0到max'
+      },
+      {
+        title: '统计每个数的个数',
+        description: '遍历数组，统计出现次数',
+        code: `for (int num : arr) {
+    count[num]++;
+}`,
+        explanation: 'count[num]记录num出现的次数'
+      },
+      {
+        title: '按顺序输出',
+        description: '遍历计数数组，输出排序结果',
+        code: `int index = 0;
+for (int i = 0; i <= max; i++) {
+    while (count[i] > 0) {
+        arr[index++] = i;
+        count[i]--;
+    }
+}`,
+        explanation: 'count[i]是几就输出几个i'
+      },
+      {
+        title: '完整代码',
+        description: 'CountingSort 类的完整实现',
+        code: `public class CountingSort {
+    public void countingSort(int[] arr) {
+        if (arr.length == 0) return;
+        
+        // 找最大值
+        int max = arr[0];
+        for (int num : arr) {
+            if (num > max) max = num;
+        }
+        
+        // 统计每个数的个数
+        int[] count = new int[max + 1];
+        for (int num : arr) {
+            count[num]++;
+        }
+        
+        // 按顺序输出
+        int index = 0;
+        for (int i = 0; i <= max; i++) {
+            while (count[i] > 0) {
+                arr[index++] = i;
+                count[i]--;
+            }
+        }
+    }
+}`,
+        explanation: '完整的计数排序实现，包含找最大值、统计和输出三个步骤。'
+      }
+    ],
+    interview: {
+      approach: '【面试回答模板】\\n\\n计数排序是一种**非比较排序**算法。\\n\\n1. **统计**：遍历数组，统计每个数字出现的次数，存入计数数组。\\n2. **输出**：遍历计数数组，按顺序输出对应数量的数字。\\n3. **适用**：适合**数值范围不大**的整数排序。\\n\\n时间复杂度 O(n+k)，空间复杂度 O(k)，其中 k 是数值范围。',
+      timeComplexity: 'O(n + k)：n是元素个数，k是数值范围',
+      spaceComplexity: 'O(k)：需要k大小的计数数组',
+      followUp: [
+        { question: '计数排序可以是稳定的吗？', answer: '可以。如果不直接通过count数组输出，而是对count数组做前缀和，然后从后往前遍历原数组放置元素，就是稳定的。' },
+        { question: '如果数组中有负数怎么办？', answer: '找出最小值min，将所有数减去min映射到非负区间，排序后再加回min。或者直接使用偏移量。' }
+      ]
+    }
+  },
+  {
+    id: 'radix-sort',
+    title: '基数排序',
+    titleEn: 'Radix Sort',
+    category: 'sorting',
+    difficulty: 'medium',
+    description: '基数排序是按位排序：先按个位排，再按十位排，再按百位排...就像整理学号，先按最后一位数字分组，再按倒数第二位分组，以此类推。',
+    examples: [
+      { input: 'arr = [170, 45, 75, 90, 802, 24, 2, 66]', output: '[2, 24, 45, 66, 75, 90, 170, 802]', explanation: '先按个位排，再按十位排，再按百位排' }
+    ],
+    thinkingGuide: [
+      {
+        step: 1,
+        question: '📚 如果要按学号排序，学号是三位数，怎么排？',
+        hint: '可以一位一位地排',
+        answer: '基数排序就是这样！先按个位数字分成10组（0-9），按顺序收集。再按十位分组收集。最后按百位分组收集。神奇的是，这样就排好了！'
+      },
+      {
+        step: 2,
+        question: '1️⃣ [170, 45, 75, 90, 802, 24, 2, 66]按个位怎么分？',
+        hint: '个位是0的一组，是2的一组...',
+        answer: '个位0: [170, 90]，个位2: [802, 2]，个位4: [24]，个位5: [45, 75]，个位6: [66]。收集后：[170, 90, 802, 2, 24, 45, 75, 66]。'
+      },
+      {
+        step: 3,
+        question: '🔟 继续按十位分组，会怎样？',
+        hint: '注意2的十位是0',
+        answer: '十位0: [802, 2]，十位2: [24]，十位4: [45]，十位6: [66]，十位7: [170, 75]，十位9: [90]。收集后：[802, 2, 24, 45, 66, 170, 75, 90]。'
+      },
+      {
+        step: 4,
+        question: '🔄 为什么从低位到高位排序能得到正确结果？',
+        hint: '想想稳定排序的特点',
+        answer: '关键是每轮排序必须是**稳定的**！这样高位相同时，低位的顺序会保持。比如45和75，按十位排序时都在7组，但45在75前面（个位排序的结果），所以最终45在75前面。'
+      }
+    ],
+    codeSteps: [
+      {
+        title: '找最大值确定位数',
+        description: '最大值的位数决定需要排几轮',
+        code: `public void radixSort(int[] arr) {
+    int max = arr[0];
+    for (int num : arr) {
+        if (num > max) max = num;
+    }
+    // 按每一位排序
+    for (int exp = 1; max / exp > 0; exp *= 10) {
+        countingSortByDigit(arr, exp);
+    }
+}`,
+        explanation: 'exp表示当前处理的位：1是个位，10是十位，100是百位'
+      },
+      {
+        title: '按某一位进行计数排序',
+        description: '对当前位使用计数排序',
+        code: `private void countingSortByDigit(int[] arr, int exp) {
+    int n = arr.length;
+    int[] output = new int[n];
+    int[] count = new int[10]; // 0-9
+    
+    // 统计当前位的数字出现次数
+    for (int num : arr) {
+        int digit = (num / exp) % 10;
+        count[digit]++;
+    }
+    // ...
+}`,
+        explanation: '(num / exp) % 10 取出当前位的数字'
+      },
+      {
+        title: '计算累积计数',
+        description: '确定每个数字的最终位置',
+        code: `// 累积计数
+for (int i = 1; i < 10; i++) {
+    count[i] += count[i - 1];
+}`,
+        explanation: 'count[i]变成"小于等于i的数字个数"'
+      },
+      {
+        title: '从后往前放置元素',
+        description: '保证稳定性',
+        code: `// 从后往前，保证稳定性
+for (int i = n - 1; i >= 0; i--) {
+    int digit = (arr[i] / exp) % 10;
+    output[count[digit] - 1] = arr[i];
+    count[digit]--;
+}
+// 复制回原数组
+System.arraycopy(output, 0, arr, 0, n);`,
+        explanation: '从后往前遍历保证相同数字的相对顺序不变'
+      },
+      {
+        title: '完整代码',
+        description: 'RadixSort 类的完整实现',
+        code: `public class RadixSort {
+    public void radixSort(int[] arr) {
+        int max = arr[0];
+        for (int num : arr) {
+            if (num > max) max = num;
+        }
+        
+        for (int exp = 1; max / exp > 0; exp *= 10) {
+            countingSortByDigit(arr, exp);
+        }
+    }
+    
+    private void countingSortByDigit(int[] arr, int exp) {
+        int n = arr.length;
+        int[] output = new int[n];
+        int[] count = new int[10];
+        
+        for (int num : arr) {
+            count[(num / exp) % 10]++;
+        }
+        
+        for (int i = 1; i < 10; i++) {
+            count[i] += count[i - 1];
+        }
+        
+        for (int i = n - 1; i >= 0; i--) {
+            int digit = (arr[i] / exp) % 10;
+            output[count[digit] - 1] = arr[i];
+            count[digit]--;
+        }
+        
+        System.arraycopy(output, 0, arr, 0, n);
+    }
+}`,
+        explanation: '完整的基数排序实现，包含多次计数排序的过程。'
+      }
+    ],
+    interview: {
+      approach: '【面试回答模板】\\n\\n基数排序是一种**非比较排序**，利用了整数的位数性质。\\n\\n1. **按位排序**：从低位到高位（LSD）或从高位到低位（MSD）进行排序。\\n2. **稳定性**：要求每一轮的排序（通常用计数排序）必须是**稳定的**，这样高位相同时不会打乱低位的顺序。\\n\\n时间复杂度 O(d×(n+k))，其中 d 是位数。适合**位数不多**的整数排序。',
+      timeComplexity: 'O(d × (n + k))：d是位数，n是元素个数，k是基数',
+      spaceComplexity: 'O(n + k)：需要额外的桶/数组空间',
+      followUp: [
+        { question: '基数排序与计数排序有什么关系？', answer: '基数排序通常使用计数排序作为每一位的子排序算法。' },
+        { question: '基数排序能排负数吗？', answer: '可以直接排吗不行。需要特殊处理，比如将负数和正数分开排，或者所有数加上偏移量转为正数。' }
+      ]
+    }
+  },
+  {
+    id: 'bucket-sort',
+    title: '桶排序',
+    titleEn: 'Bucket Sort',
+    category: 'sorting',
+    difficulty: 'medium',
+    description: '桶排序把数据分到几个"桶"里，每个桶内部排序，然后按桶的顺序合并。就像把学生按分数段分组，每组内部排序，然后合并成总排名。',
+    examples: [
+      { input: 'arr = [0.42, 0.32, 0.23, 0.52, 0.25, 0.47, 0.51]', output: '[0.23, 0.25, 0.32, 0.42, 0.47, 0.51, 0.52]', explanation: '分到不同桶，桶内排序，然后合并' }
+    ],
+    thinkingGuide: [
+      {
+        step: 1,
+        question: '🗑️ 如果要给100个学生按分数排名，怎么快速排？',
+        hint: '可以先按分数段分组',
+        answer: '桶排序就像这样！先按分数段分组：90-100分一组，80-89分一组...每组内部排序，然后按组合并。如果分布均匀，每组人数少，排序很快！'
+      },
+      {
+        step: 2,
+        question: '📥 [0.42, 0.32, 0.23, 0.52]分到5个桶，怎么分？',
+        hint: '0-0.2一个桶，0.2-0.4一个桶...',
+        answer: '桶0(0-0.2): 空，桶1(0.2-0.4): [0.32, 0.23]，桶2(0.4-0.6): [0.42, 0.52]，桶3和4: 空。'
+      },
+      {
+        step: 3,
+        question: '🔄 每个桶内怎么排序？',
+        hint: '可以用插入排序',
+        answer: '桶1排序后: [0.23, 0.32]，桶2排序后: [0.42, 0.52]。按桶顺序合并: [0.23, 0.32, 0.42, 0.52]。'
+      },
+      {
+        step: 4,
+        question: '📝 桶排序什么时候效率高？',
+        hint: '想想如果所有数都在一个桶里会怎样',
+        answer: '当数据**分布均匀**时效率最高！如果所有数都落在一个桶里，就退化成只有一层的普通排序了（最坏情况）。'
+      }
+    ],
+    codeSteps: [
+      {
+        title: '创建桶',
+        description: '根据数据范围创建桶',
+        code: `public void bucketSort(float[] arr) {
+    int n = arr.length;
+    if (n <= 0) return;
+    
+    // 创建n个桶
+    List<List<Float>> buckets = new ArrayList<>();
+    for (int i = 0; i < n; i++) {
+        buckets.add(new ArrayList<>());
+    }
+}`,
+        explanation: '通常创建n个桶，假设数据在[0,1)范围内'
+      },
+      {
+        title: '分配元素到桶',
+        description: '根据值决定放入哪个桶',
+        code: `for (float num : arr) {
+    int bucketIdx = (int) (n * num); // 确定桶的索引
+    if (bucketIdx == n) bucketIdx--; // 处理1.0的情况
+    buckets.get(bucketIdx).add(num);
+}`,
+        explanation: 'n*num计算桶索引，0.32放入桶3（假设n=10）'
+      },
+      {
+        title: '桶内排序并合并',
+        description: '对每个桶排序后合并',
+        code: `// 桶内排序
+for (List<Float> bucket : buckets) {
+    Collections.sort(bucket);
+}
+
+// 合并
+int index = 0;
+for (List<Float> bucket : buckets) {
+    for (float num : bucket) {
+        arr[index++] = num;
+    }
+}`,
+        explanation: '桶内可以使用插入排序等简单算法，这里直接用Collections.sort'
+      },
+      {
+        title: '完整代码',
+        description: 'BucketSort 类的完整实现',
+        code: `import java.util.*;
+
+public class BucketSort {
+    public void bucketSort(float[] arr) {
+        int n = arr.length;
+        if (n <= 0) return;
+        
+        List<List<Float>> buckets = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            buckets.add(new ArrayList<>());
+        }
+        
+        for (float num : arr) {
+            int bucketIdx = (int) (n * num);
+            if (bucketIdx == n) bucketIdx--;
+            buckets.get(bucketIdx).add(num);
+        }
+        
+        for (List<Float> bucket : buckets) {
+            Collections.sort(bucket);
+        }
+        
+        int index = 0;
+        for (List<Float> bucket : buckets) {
+            for (float num : bucket) {
+                arr[index++] = num;
+            }
+        }
+    }
+}`,
+        explanation: '完整的桶排序实现，包含分桶、分配、排序和合并。'
+      }
+    ],
+    interview: {
+      approach: '【面试回答模板】\\n\\n桶排序采用**分治策略**。\\n\\n1. **分桶**：将数据根据范围分配到若干个"桶"中。\\n2. **排序**：对每个桶内部进行排序（常用插入排序）。\\n3. **合并**：按顺序将桶内数据合并。\\n\\n**效率**：当数据**均匀分布**时，时间复杂度接近 O(n)。适用于外部排序或数据分布比较均匀的场景。',
+      timeComplexity: 'O(n + k)：平均情况，k是桶的数量',
+      spaceComplexity: 'O(n + k)：需要k个桶的空间',
+      followUp: [
+        { question: '桶排序与计数排序有什么区别？', answer: '计数排序本质上是桶大小为1的桶排序。桶排序通常每个桶是一个范围，桶内还需要排序。' },
+        { question: '桶排序的最坏情况是什么？', answer: '当所有数据都分配到同一个桶中时，时间复杂度退化为桶内排序算法的复杂度（通常是O(nlogn)或O(n^2)）。' }
+      ]
+    }
+  },
+  {
+    id: 'shell-sort',
+    title: '希尔排序',
+    titleEn: 'Shell Sort',
+    category: 'sorting',
+    difficulty: 'medium',
+    description: '希尔排序是插入排序的改进版。它先让间隔较大的元素有序，然后逐渐缩小间隔，最后间隔为1时就是普通插入排序。就像先粗略整理，再精细整理。',
+    examples: [
+      { input: 'arr = [12, 34, 54, 2, 3]', output: '[2, 3, 12, 34, 54]', explanation: '先按大间隔排序，逐渐缩小间隔' }
+    ],
+    thinkingGuide: [
+      {
+        step: 1,
+        question: '📚 如果书架上的书很乱，怎么快速整理？',
+        hint: '可以先把相隔较远的书大致排好',
+        answer: '希尔排序就像这样！先把间隔5本的书排好（第1本和第6本比较），再把间隔3本的排好，最后间隔1本（相邻的）排好。这样比一本本整理快！'
+      },
+      {
+        step: 2,
+        question: '📏 数组长度为5，间隔怎么选？',
+        hint: '通常从n/2开始，每次减半',
+        answer: '间隔序列：2, 1。先按间隔2排序（0和2比，1和3比...），再按间隔1排序（普通插入排序）。'
+      },
+      {
+        step: 3,
+        question: '🔢 [12, 34, 54, 2, 3]按间隔2怎么排？',
+        hint: '把间隔为2的元素看成一组',
+        answer: '组1: [12, 54, 3]（位置0,2,4），组2: [34, 2]（位置1,3）。组1排序后[3, 12, 54]，组2排序后[2, 34]。合并得[3, 2, 12, 34, 54]。'
+      },
+      {
+        step: 4,
+        question: '🚀 希尔排序为什么比插入排序快？',
+        hint: '想想大间隔排序的作用',
+        answer: '大间隔排序让元素快速移动到大致正确的位置，减少了后续小间隔排序时的移动次数。就像先粗调再微调，比直接微调快！'
+      }
+    ],
+    codeSteps: [
+      {
+        title: '选择初始间隔',
+        description: '通常从n/2开始',
+        code: `public void shellSort(int[] arr) {
+    int n = arr.length;
+    
+    // 间隔从n/2开始，每次减半
+    for (int gap = n / 2; gap > 0; gap /= 2) {
+        // 对每个间隔进行插入排序
+    }
+}`,
+        explanation: 'gap是当前间隔，从n/2逐渐减小到1'
+      },
+      {
+        title: '对每个间隔进行插入排序',
+        description: '类似插入排序，但间隔是gap而不是1',
+        code: `for (int gap = n / 2; gap > 0; gap /= 2) {
+    for (int i = gap; i < n; i++) {
+        int temp = arr[i];
+        int j = i;
+        
+        while (j >= gap && arr[j - gap] > temp) {
+            arr[j] = arr[j - gap];
+            j -= gap;
+        }
+        arr[j] = temp;
+    }
+}`,
+        explanation: '和插入排序类似，但比较和移动的间隔是gap'
+      },
+      {
+        title: '完整代码',
+        description: 'ShellSort 类的完整实现',
+        code: `public class ShellSort {
+    public void shellSort(int[] arr) {
+        int n = arr.length;
+        
+        for (int gap = n / 2; gap > 0; gap /= 2) {
+            for (int i = gap; i < n; i++) {
+                int temp = arr[i];
+                int j = i;
+                
+                while (j >= gap && arr[j - gap] > temp) {
+                    arr[j] = arr[j - gap];
+                    j -= gap;
+                }
+                arr[j] = temp;
+            }
+        }
+    }
+}`,
+        explanation: '完整的希尔排序实现。'
+      }
+    ],
+    interview: {
+      approach: '【面试回答模板】\\n\\n希尔排序是**插入排序的优化版本**。\\n\\n1. **分组**：通过设置**间隔 (Gap)**，将数组分成若干个子序列。\\n2. **排序**：对每个子序列进行插入排序。\\n3. **缩小间隔**：逐渐缩小间隔，直到间隔为1，进行最后一次插入排序。\\n\\n**优势**：允许元素大幅度移动，减少了插入排序中数据移动的次数。时间复杂度突破了 O(n^2)。',
+      timeComplexity: 'O(nlogn) ~ O(n²)：取决于间隔序列',
+      spaceComplexity: 'O(1)：原地排序',
+      followUp: [
+        { question: '希尔排序的间隔序列怎么选？', answer: '希尔增量（n/2, n/4...）最常用，但最坏情况O(n^2)。Hibbard增量（2^k-1）可达到O(n^(3/2))。' },
+        { question: '希尔排序是稳定的吗？', answer: '不稳定。因为相同元素可能被分到不同组，并在各自组内移动，导致相对顺序改变。' }
       ]
     }
   }

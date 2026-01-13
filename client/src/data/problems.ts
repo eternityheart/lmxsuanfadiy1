@@ -56,11 +56,11 @@ export const problems: Problem[] = [
       { input: 'nums = [3,2,4], target = 6', output: '[1,2]' }
     ],
     thinkingGuide: [
-      { step: 1, question: '看到这道题，你的第一反应是什么？', hint: '最直接的方法是什么？不用考虑效率', answer: '最直接的想法是：用两层循环，外层选第一个数，内层找第二个数，看它们的和是否等于target。这就是"暴力解法"。' },
-      { step: 2, question: '暴力解法的问题在哪里？', hint: '想想时间复杂度', answer: '两层循环意味着 O(n²) 的时间复杂度。如果数组有10000个元素，需要执行1亿次比较，太慢了！' },
-      { step: 3, question: '我们真正需要做的是什么？', hint: '把问题简化一下', answer: '对于每个数 nums[i]，我们需要找到另一个数 = target - nums[i]。问题变成了：如何快速判断某个数是否存在于数组中？' },
-      { step: 4, question: '什么数据结构可以实现 O(1) 的查找？', hint: '想想你学过的数据结构', answer: '哈希表（HashMap）！它可以在 O(1) 时间内判断一个元素是否存在。这就是本题的关键突破口！' },
-      { step: 5, question: '哈希表里应该存什么？', hint: '我们需要返回的是下标', answer: 'Key 存数组的值，Value 存对应的下标。这样找到配对的数时，能直接拿到它的下标。' }
+      { step: 1, question: '🤔 看到这道题，你的第一反应是什么？', hint: '最直接的方法是什么？不用考虑效率', answer: '最直接的想法是：用两层循环，外层选第一个数，内层找第二个数，看它们的和是否等于target。这就是"暴力解法"。' },
+      { step: 2, question: '🐢 暴力解法的问题在哪里？', hint: '想想时间复杂度', answer: '两层循环意味着 O(n²) 的时间复杂度。如果数组有10000个元素，需要执行1亿次比较，太慢了！' },
+      { step: 3, question: '🎯 我们真正需要做的是什么？', hint: '把问题简化一下', answer: '对于每个数 nums[i]，我们需要找到另一个数 = target - nums[i]。问题变成了：如何快速判断某个数是否存在于数组中？' },
+      { step: 4, question: '⚡ 什么数据结构可以实现 O(1) 的查找？', hint: '想想你学过的数据结构', answer: '哈希表（HashMap）！它可以在 O(1) 时间内判断一个元素是否存在。这就是本题的关键突破口！' },
+      { step: 5, question: '🗝️ 哈希表里应该存什么？', hint: '我们需要返回的是下标', answer: 'Key 存数组的值，Value 存对应的下标。这样找到配对的数时，能直接拿到它的下标。' }
     ],
     codeSteps: [
       { title: '定义方法签名', description: '首先确定输入输出：输入是int数组和目标值，输出是两个下标组成的数组', code: 'public int[] twoSum(int[] nums, int target) {\n    // 待实现\n}', explanation: '返回类型是int[]，因为要返回两个下标' },
@@ -93,9 +93,9 @@ export const problems: Problem[] = [
       { input: 'strs = [""]', output: '[[""]]' }
     ],
     thinkingGuide: [
-      { step: 1, question: '什么是字母异位词？它们有什么共同特点？', hint: '想想 "eat" 和 "tea" 的关系', answer: '字母异位词包含完全相同的字母，只是排列顺序不同。如果把字母排序后，它们会变成完全一样的字符串！' },
-      { step: 2, question: '如何判断两个词是否是异位词？', hint: '利用刚才发现的特点', answer: '把两个词的字母都排序，如果排序后相同，就是异位词。比如 "eat" → "aet"，"tea" → "aet"，相同！' },
-      { step: 3, question: '如何把异位词分到同一组？', hint: '想想什么数据结构可以把相同的东西放一起', answer: '用哈希表！Key是排序后的字符串，Value是原字符串的列表。所有异位词排序后相同，自然会被放到同一个列表里。' }
+      { step: 1, question: '🔍 什么是字母异位词？它们有什么共同特点？', hint: '想想 "eat" 和 "tea" 的关系', answer: '字母异位词包含完全相同的字母，只是排列顺序不同。如果把字母排序后，它们会变成完全一样的字符串！' },
+      { step: 2, question: '🤔 如何判断两个词是否是异位词？', hint: '利用刚才发现的特点', answer: '把两个词的字母都排序，如果排序后相同，就是异位词。比如 "eat" → "aet"，"tea" → "aet"，相同！' },
+      { step: 3, question: '📦 如何把异位词分到同一组？', hint: '想想什么数据结构可以把相同的东西放一起', answer: '用哈希表！Key是排序后的字符串，Value是原字符串的列表。所有异位词排序后相同，自然会被放到同一个列表里。' }
     ],
     codeSteps: [
       { title: '定义方法签名', description: '输入字符串数组，输出分组后的列表', code: 'public List<List<String>> groupAnagrams(String[] strs) {\n    // 待实现\n}', explanation: '返回List<List<String>>，外层是所有分组，内层是每组的单词' },
@@ -127,9 +127,9 @@ export const problems: Problem[] = [
       { input: 'nums = [0,3,7,2,5,8,4,6,0,1]', output: '9' }
     ],
     thinkingGuide: [
-      { step: 1, question: '最直接的方法是什么？', hint: '如果可以排序的话', answer: '排序后遍历，统计连续数字的长度。但排序需要O(n*logn)，不满足O(n)的要求。' },
-      { step: 2, question: '如何在O(1)时间判断一个数是否存在？', hint: '用什么数据结构', answer: '用HashSet！把所有数字放入Set，就能O(1)判断任意数字是否存在。' },
-      { step: 3, question: '如何避免重复计算？', hint: '什么时候开始计数', answer: '只从序列的起点开始计数！如果num-1存在，说明num不是起点，跳过。这样每个数字最多被访问两次。' }
+      { step: 1, question: '🤔 最直接的方法是什么？', hint: '如果可以排序的话', answer: '排序后遍历，统计连续数字的长度。但排序需要O(n*logn)，不满足O(n)的要求。' },
+      { step: 2, question: '⚡ 如何在O(1)时间判断一个数是否存在？', hint: '用什么数据结构', answer: '用HashSet！把所有数字放入Set，就能O(1)判断任意数字是否存在。' },
+      { step: 3, question: '🚀 如何避免重复计算？', hint: '什么时候开始计数', answer: '只从序列的起点开始计数！如果num-1存在，说明num不是起点，跳过。这样每个数字最多被访问两次。' }
     ],
     codeSteps: [
       { title: '定义方法签名', description: '输入数组，输出最长连续序列长度', code: 'public int longestConsecutive(int[] nums) {\n    // 待实现\n}', explanation: '返回int类型的长度' },
@@ -160,9 +160,9 @@ export const problems: Problem[] = [
       { input: 'nums = [0]', output: '[0]' }
     ],
     thinkingGuide: [
-      { step: 1, question: '最直接的方法是什么？', hint: '如果可以用额外空间', answer: '创建新数组，先放非零元素，再补零。但题目要求原地操作。' },
-      { step: 2, question: '原地操作的关键是什么？', hint: '想想如何区分已处理和未处理的区域', answer: '用双指针！一个指针指向下一个非零元素应该放的位置，另一个遍历数组。' },
-      { step: 3, question: '具体怎么移动？', hint: '遇到非零元素怎么办', answer: '遇到非零元素就和slow位置交换，然后slow前进。这样slow左边都是非零元素。' }
+      { step: 1, question: '🤔 最直接的方法是什么？', hint: '如果可以用额外空间', answer: '创建新数组，先放非零元素，再补零。但题目要求原地操作。' },
+      { step: 2, question: '🐢 原地操作的关键是什么？', hint: '想想如何区分已处理和未处理的区域', answer: '用双指针！一个指针指向下一个非零元素应该放的位置，另一个遍历数组。' },
+      { step: 3, question: '⚡ 具体怎么移动？', hint: '遇到非零元素怎么办', answer: '遇到非零元素就和slow位置交换，然后slow前进。这样slow左边都是非零元素。' }
     ],
     codeSteps: [
       { title: '定义方法签名', description: '原地修改数组，无返回值', code: 'public void moveZeroes(int[] nums) {\n    // 待实现\n}', explanation: '返回void，直接修改原数组' },
@@ -192,9 +192,9 @@ export const problems: Problem[] = [
       { input: 'height = [1,1]', output: '1' }
     ],
     thinkingGuide: [
-      { step: 1, question: '面积怎么计算？', hint: '想想容器的形状', answer: '面积 = 宽度 × 高度 = (right - left) × min(height[left], height[right])' },
-      { step: 2, question: '暴力解法是什么？', hint: '枚举所有可能', answer: '两层循环枚举所有线的组合，计算面积取最大值。时间O(n²)。' },
-      { step: 3, question: '如何优化？', hint: '从两端开始', answer: '双指针从两端向中间移动。每次移动较短的那条线，因为移动较长的线只会让面积变小或不变。' }
+      { step: 1, question: '📐 面积怎么计算？', hint: '想想容器的形状', answer: '面积 = 宽度 × 高度 = (right - left) × min(height[left], height[right])' },
+      { step: 2, question: '🐢 暴力解法是什么？', hint: '枚举所有可能', answer: '两层循环枚举所有线的组合，计算面积取最大值。时间O(n²)。' },
+      { step: 3, question: '🚀 如何优化？', hint: '从两端开始', answer: '双指针从两端向中间移动。每次移动较短的那条线，因为移动较长的线只会让面积变小或不变。' }
     ],
     codeSteps: [
       { title: '定义方法签名', description: '输入高度数组，输出最大面积', code: 'public int maxArea(int[] height) {\n    // 待实现\n}', explanation: '返回int类型的最大面积' },
@@ -225,9 +225,9 @@ export const problems: Problem[] = [
       { input: 'nums = [0,0,0]', output: '[[0,0,0]]' }
     ],
     thinkingGuide: [
-      { step: 1, question: '和两数之和有什么关系？', hint: '固定一个数后', answer: '固定第一个数nums[i]后，问题变成在剩余数组中找两个数，使它们的和等于-nums[i]。' },
-      { step: 2, question: '如何避免重复？', hint: '排序有什么好处', answer: '先排序！这样相同的数字会相邻，遇到重复数字就跳过。' },
-      { step: 3, question: '内层如何高效查找？', hint: '有序数组用什么方法', answer: '有序数组用双指针！左右指针从两端向中间移动，和大了右移，和小了左移。' }
+      { step: 1, question: '🤔 和两数之和有什么关系？', hint: '固定一个数后', answer: '固定第一个数nums[i]后，问题变成在剩余数组中找两个数，使它们的和等于-nums[i]。' },
+      { step: 2, question: '⚡ 如何避免重复？', hint: '排序有什么好处', answer: '先排序！这样相同的数字会相邻，遇到重复数字就跳过。' },
+      { step: 3, question: '🚀 内层如何高效查找？', hint: '有序数组用什么方法', answer: '有序数组用双指针！左右指针从两端向中间移动，和大了右移，和小了左移。' }
     ],
     codeSteps: [
       { title: '定义方法签名', description: '输入数组，输出所有三元组', code: 'public List<List<Integer>> threeSum(int[] nums) {\n    // 待实现\n}', explanation: '返回List<List<Integer>>，每个内层List是一个三元组' },
@@ -258,9 +258,9 @@ export const problems: Problem[] = [
       { input: 'height = [4,2,0,3,2,5]', output: '9' }
     ],
     thinkingGuide: [
-      { step: 1, question: '每个位置能接多少水？', hint: '取决于什么', answer: '取决于左右两边最高柱子中较矮的那个。water[i] = min(leftMax, rightMax) - height[i]' },
-      { step: 2, question: '如何知道每个位置的leftMax和rightMax？', hint: '预处理', answer: '可以预处理两个数组，分别存储每个位置的左边最大值和右边最大值。' },
-      { step: 3, question: '能否优化空间？', hint: '双指针', answer: '用双指针！从两端向中间移动，维护leftMax和rightMax。较小的那边决定当前能接的水。' }
+      { step: 1, question: '🌊 每个位置能接多少水？', hint: '取决于什么', answer: '取决于左右两边最高柱子中较矮的那个。water[i] = min(leftMax, rightMax) - height[i]' },
+      { step: 2, question: '🤔 如何知道每个位置的leftMax和rightMax？', hint: '预处理', answer: '可以预处理两个数组，分别存储每个位置的左边最大值和右边最大值。' },
+      { step: 3, question: '🚀 能否优化空间？', hint: '双指针', answer: '用双指针！从两端向中间移动，维护leftMax和rightMax。较小的那边决定当前能接的水。' }
     ],
     codeSteps: [
       { title: '定义方法签名', description: '输入高度数组，输出总水量', code: 'public int trap(int[] height) {\n    // 待实现\n}', explanation: '返回int类型的总水量' },
@@ -291,9 +291,9 @@ export const problems: Problem[] = [
       { input: 's = "bbbbb"', output: '1', explanation: '因为无重复字符的最长子串是 "b"，所以其长度为 1。' }
     ],
     thinkingGuide: [
-      { step: 1, question: '什么是子串？', hint: '和子序列的区别', answer: '子串是连续的，子序列可以不连续。这道题要找连续的无重复字符序列。' },
-      { step: 2, question: '如何判断窗口内是否有重复？', hint: '用什么数据结构', answer: '用HashSet或HashMap记录窗口内的字符。' },
-      { step: 3, question: '遇到重复字符怎么办？', hint: '收缩窗口', answer: '从左边收缩窗口，直到没有重复字符为止。' }
+      { step: 1, question: '🤔 什么是子串？', hint: '和子序列的区别', answer: '子串是连续的，子序列可以不连续。这道题要找连续的无重复字符序列。' },
+      { step: 2, question: '⚡ 如何判断窗口内是否有重复？', hint: '用什么数据结构', answer: '用HashSet或HashMap记录窗口内的字符。' },
+      { step: 3, question: '🔄 遇到重复字符怎么办？', hint: '收缩窗口', answer: '从左边收缩窗口，直到没有重复字符为止。' }
     ],
     codeSteps: [
       { title: '定义方法签名', description: '输入字符串，输出最长长度', code: 'public int lengthOfLongestSubstring(String s) {\n    // 待实现\n}', explanation: '返回int类型的最大长度' },
@@ -323,9 +323,9 @@ export const problems: Problem[] = [
       { input: 's = "abab", p = "ab"', output: '[0,1,2]' }
     ],
     thinkingGuide: [
-      { step: 1, question: '什么是异位词？', hint: '字母组成相同', answer: '异位词是字母相同但顺序不同的词。判断方法：统计字母频率是否相同。' },
-      { step: 2, question: '如何高效比较？', hint: '固定窗口大小', answer: '用固定大小为p.length的滑动窗口，比较窗口内字符频率和p的字符频率。' },
-      { step: 3, question: '如何优化比较过程？', hint: '维护一个计数器', answer: '用一个计数器记录还需要匹配的字符数，当计数器为0时说明完全匹配。' }
+      { step: 1, question: '🔍 什么是异位词？', hint: '字母组成相同', answer: '异位词是字母相同但顺序不同的词。判断方法：统计字母频率是否相同。' },
+      { step: 2, question: '⚡ 如何高效比较？', hint: '固定窗口大小', answer: '用固定大小为p.length的滑动窗口，比较窗口内字符频率和p的字符频率。' },
+      { step: 3, question: '🚀 如何优化比较过程？', hint: '维护一个计数器', answer: '用一个计数器记录还需要匹配的字符数，当计数器为0时说明完全匹配。' }
     ],
     codeSteps: [
       { title: '定义方法签名', description: '输入两个字符串，输出起始索引列表', code: 'public List<Integer> findAnagrams(String s, String p) {\n    // 待实现\n}', explanation: '返回所有异位词子串的起始位置' },
@@ -355,9 +355,9 @@ export const problems: Problem[] = [
       { input: 'nums = [1,2,3], k = 3', output: '2' }
     ],
     thinkingGuide: [
-      { step: 1, question: '暴力解法是什么？', hint: '枚举所有子数组', answer: '两层循环枚举起点和终点，计算每个子数组的和。时间O(n²)或O(n³)。' },
-      { step: 2, question: '前缀和有什么用？', hint: '子数组和的计算', answer: 'sum[i..j] = prefixSum[j] - prefixSum[i-1]。如果prefixSum[j] - prefixSum[i-1] = k，说明找到一个和为k的子数组。' },
-      { step: 3, question: '如何快速找到满足条件的前缀和？', hint: '变形等式', answer: '找prefixSum[i-1] = prefixSum[j] - k。用哈希表存储前缀和出现的次数！' }
+      { step: 1, question: '🐢 暴力解法是什么？', hint: '枚举所有子数组', answer: '两层循环枚举起点和终点，计算每个子数组的和。时间O(n²)或O(n³)。' },
+      { step: 2, question: '💡 前缀和有什么用？', hint: '子数组和的计算', answer: 'sum[i..j] = prefixSum[j] - prefixSum[i-1]。如果prefixSum[j] - prefixSum[i-1] = k，说明找到一个和为k的子数组。' },
+      { step: 3, question: '🚀 如何快速找到满足条件的前缀和？', hint: '变形等式', answer: '找prefixSum[i-1] = prefixSum[j] - k。用哈希表存储前缀和出现的次数！' }
     ],
     codeSteps: [
       { title: '定义方法签名', description: '输入数组和目标值，输出子数组个数', code: 'public int subarraySum(int[] nums, int k) {\n    // 待实现\n}', explanation: '返回和为k的子数组数量' },
@@ -386,9 +386,9 @@ export const problems: Problem[] = [
       { input: 'nums = [1], k = 1', output: '[1]' }
     ],
     thinkingGuide: [
-      { step: 1, question: '暴力解法是什么？', hint: '每个窗口都求最大值', answer: '每个窗口遍历k个元素找最大值，时间O(n*k)。' },
-      { step: 2, question: '如何优化？', hint: '用什么数据结构', answer: '用单调队列！队列中元素从大到小排列，队首就是最大值。' },
-      { step: 3, question: '单调队列如何维护？', hint: '入队和出队的规则', answer: '入队时，把比当前元素小的都移除（它们不可能成为最大值）。出队时，如果队首已经不在窗口内就移除。' }
+      { step: 1, question: '🐢 暴力解法是什么？', hint: '每个窗口都求最大值', answer: '每个窗口遍历k个元素找最大值，时间O(n*k)。' },
+      { step: 2, question: '⚡ 如何优化？', hint: '用什么数据结构', answer: '用单调队列！队列中元素从大到小排列，队首就是最大值。' },
+      { step: 3, question: '🔧 单调队列如何维护？', hint: '入队和出队的规则', answer: '入队时，把比当前元素小的都移除（它们不可能成为最大值）。出队时，如果队首已经不在窗口内就移除。' }
     ],
     codeSteps: [
       { title: '定义方法签名', description: '输入数组和窗口大小，输出最大值数组', code: 'public int[] maxSlidingWindow(int[] nums, int k) {\n    // 待实现\n}', explanation: '返回每个窗口的最大值' },
@@ -417,9 +417,9 @@ export const problems: Problem[] = [
       { input: 's = "a", t = "a"', output: '"a"' }
     ],
     thinkingGuide: [
-      { step: 1, question: '什么是覆盖子串？', hint: '包含所有字符', answer: '子串中包含t的所有字符（包括重复的）。比如t="AAB"，子串至少要有2个A和1个B。' },
-      { step: 2, question: '如何判断是否覆盖？', hint: '统计字符', answer: '用两个计数器：一个统计t中每个字符需要的数量，一个统计窗口中每个字符的数量。' },
-      { step: 3, question: '如何找最小？', hint: '滑动窗口', answer: '先扩展右边界直到覆盖，然后收缩左边界找最小，记录结果后继续扩展。' }
+      { step: 1, question: '🤔 什么是覆盖子串？', hint: '包含所有字符', answer: '子串中包含t的所有字符（包括重复的）。比如t="AAB"，子串至少要有2个A和1个B。' },
+      { step: 2, question: '⚡ 如何判断是否覆盖？', hint: '统计字符', answer: '用两个计数器：一个统计t中每个字符需要的数量，一个统计窗口中每个字符的数量。' },
+      { step: 3, question: '🚀 如何找最小？', hint: '滑动窗口', answer: '先扩展右边界直到覆盖，然后收缩左边界找最小，记录结果后继续扩展。' }
     ],
     codeSteps: [
       { title: '定义方法签名', description: '输入两个字符串，输出最小覆盖子串', code: 'public String minWindow(String s, String t) {\n    // 待实现\n}', explanation: '返回最小的覆盖子串，不存在返回空串' },
@@ -1156,27 +1156,33 @@ export const problems: Problem[] = [
     titleEn: 'Search Insert Position',
     category: 'binary-search',
     difficulty: 'easy',
-    description: '给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。\n\n请必须使用时间复杂度为 O(log n) 的算法。',
+    description: '给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。\\n\\n请必须使用时间复杂度为 O(log n) 的算法。',
     examples: [
       { input: 'nums = [1,3,5,6], target = 5', output: '2' },
       { input: 'nums = [1,3,5,6], target = 2', output: '1' },
       { input: 'nums = [1,3,5,6], target = 7', output: '4' }
     ],
     thinkingGuide: [
-      { step: 1, question: '为什么用二分查找？', hint: '有序数组', answer: '数组有序，要求O(logn)，自然想到二分查找。' },
-      { step: 2, question: '找不到时返回什么？', hint: '插入位置', answer: '返回第一个大于等于target的位置，即left指针最终的位置。' }
+      { step: 1, question: '🎯 题目要求什么？', hint: '找位置或插入位置', answer: '在有序数组中找target的位置；如果不存在，返回它应该插入的位置（保持有序）。插入位置就是第一个大于等于target的位置。' },
+      { step: 2, question: '🤔 为什么用二分查找？', hint: '看时间复杂度要求', answer: '题目要求O(log n)，数组又是有序的，自然想到二分查找。遍历是O(n)不满足要求。' },
+      { step: 3, question: '📝 二分查找的核心变量有哪些？', hint: 'left、right、mid', answer: 'left和right定义搜索区间，mid是中间位置。我们用左闭右闭区间[left, right]，所以循环条件是left <= right。' },
+      { step: 4, question: '🔄 如何缩小搜索区间？', hint: '比较nums[mid]和target', answer: '如果nums[mid] == target，直接返回mid。如果nums[mid] < target，target在右半边，left = mid + 1。如果nums[mid] > target，target在左半边，right = mid - 1。' },
+      { step: 5, question: '❓ 找不到时为什么返回left？', hint: '循环结束时left的位置', answer: '循环结束时，left指向第一个大于target的位置，正好是插入位置！因为每次target > nums[mid]时left右移，target < nums[mid]时right左移，最终left越过right时，left就是第一个>=target的位置。' }
     ],
     codeSteps: [
-      { title: '定义方法签名', description: '输入有序数组和目标值，输出位置', code: 'public int searchInsert(int[] nums, int target) {\n    // 待实现\n}', explanation: '返回目标值的位置或应插入的位置' },
-      { title: '初始化边界', description: '左右指针', code: 'public int searchInsert(int[] nums, int target) {\n    int left = 0, right = nums.length - 1;\n}', explanation: '左闭右闭区间' },
-      { title: '二分查找', description: '循环缩小范围', code: 'public int searchInsert(int[] nums, int target) {\n    int left = 0, right = nums.length - 1;\n    while (left <= right) {\n        int mid = left + (right - left) / 2;\n        if (nums[mid] == target) {\n            return mid;\n        } else if (nums[mid] < target) {\n            left = mid + 1;\n        } else {\n            right = mid - 1;\n        }\n    }\n    return left;\n}', explanation: '找到返回mid，找不到返回left（插入位置）' }
+      { title: '第1步：定义方法和初始化边界', description: '设置左闭右闭区间', code: 'public int searchInsert(int[] nums, int target) {\n    int left = 0;\n    int right = nums.length - 1;\n    // TODO: 二分查找\n}', explanation: '🤔 为什么right是length-1？\\n因为我们用左闭右闭区间[left, right]，right必须是有效下标。' },
+      { title: '第2步：二分循环框架', description: '循环条件和计算mid', code: 'public int searchInsert(int[] nums, int target) {\n    int left = 0;\n    int right = nums.length - 1;\n    \n    while (left <= right) {\n        int mid = left + (right - left) / 2;\n        // TODO: 比较并缩小区间\n    }\n    return left;\n}', explanation: '🤔 为什么是left <= right？\\n左闭右闭区间，当left == right时区间仍有一个元素需要检查。\\n\\n💡 mid的计算用left + (right-left)/2避免整数溢出。' },
+      { title: '第3步：处理找到目标的情况', description: '相等时直接返回', code: 'while (left <= right) {\n    int mid = left + (right - left) / 2;\n    if (nums[mid] == target) {\n        return mid;  // 找到了，直接返回位置\n    }\n    // TODO: 处理不等情况\n}', explanation: '✅ 找到target就直接返回mid，这是最简单的情况。' },
+      { title: '第4步：缩小搜索区间', description: '根据比较结果移动指针', code: 'while (left <= right) {\n    int mid = left + (right - left) / 2;\n    if (nums[mid] == target) {\n        return mid;\n    } else if (nums[mid] < target) {\n        left = mid + 1;  // target在右半边\n    } else {\n        right = mid - 1;  // target在左半边\n    }\n}\nreturn left;', explanation: '🔑 关键逻辑：\\n• nums[mid] < target：mid太小，target在右边，所以left = mid + 1\\n• nums[mid] > target：mid太大，target在左边，所以right = mid - 1\\n\\n⚠️ 为什么是mid±1？因为mid已经比较过了，不需要再包含在下一轮搜索中。' },
+      { title: '第5步：完整代码', description: '汇总所有逻辑', code: 'public int searchInsert(int[] nums, int target) {\n    int left = 0;\n    int right = nums.length - 1;\n    \n    while (left <= right) {\n        int mid = left + (right - left) / 2;\n        if (nums[mid] == target) {\n            return mid;\n        } else if (nums[mid] < target) {\n            left = mid + 1;\n        } else {\n            right = mid - 1;\n        }\n    }\n    return left;  // 没找到，left就是插入位置\n}', explanation: '📊 复杂度分析：\\n• 时间：O(log n)，每次砍掉一半\\n• 空间：O(1)，只用了几个变量\\n\\n💡 记忆技巧：left最终指向"第一个大于等于target的位置"，这也叫做"左边界"。' }
     ],
     interview: {
-      approach: '标准二分查找。找到返回位置，找不到时left指向第一个大于target的位置，即插入位置。',
-      timeComplexity: 'O(log n)',
-      spaceComplexity: 'O(1)',
+      approach: '【面试回答模板】\\n\\n这道题用二分查找解决。\\n\\n核心思路：在有序数组中用二分查找目标值。找到就返回位置，找不到时left指针会停在第一个大于target的位置，正好是插入位置。\\n\\n时间复杂度O(log n)，空间O(1)。',
+      timeComplexity: 'O(log n)，每次循环搜索区间减半',
+      spaceComplexity: 'O(1)，只用了常数个变量',
       followUp: [
-        { question: '为什么返回left？', answer: '循环结束时，left指向第一个大于等于target的位置，正好是插入位置。' }
+        { question: '为什么循环结束后返回left而不是right？', answer: '循环结束时left > right，left指向第一个大于target的位置（即插入位置），right指向最后一个小于target的位置。' },
+        { question: '如果数组有重复元素呢？', answer: '这道题没有重复元素。如果有重复，需要明确是找第一个还是最后一个位置，用变体的二分查找。' }
       ]
     }
   },
@@ -1192,20 +1198,24 @@ export const problems: Problem[] = [
       { input: 'matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 13', output: 'false' }
     ],
     thinkingGuide: [
-      { step: 1, question: '矩阵有什么特点？', hint: '展开后', answer: '如果把矩阵按行展开，就是一个有序数组！' },
-      { step: 2, question: '如何映射下标？', hint: '一维到二维', answer: '一维下标i对应二维下标(i/n, i%n)，n是列数。' }
+      { step: 1, question: '🎯 矩阵有什么特殊性质？', hint: '观察整体有序性', answer: '每行递增，且下一行的开头大于上一行的结尾。这意味着如果把矩阵按行展开，就是一个完全有序的一维数组！' },
+      { step: 2, question: '🤔 如何利用这个性质？', hint: '降维打击', answer: '既然展开后是有序数组，就可以直接用二分查找！不需要先找行再找列，一次二分就够了。' },
+      { step: 3, question: '📝 如何做下标映射？', hint: '一维转二维', answer: '一维下标idx对应二维坐标：行 = idx / n，列 = idx % n（n是列数）。比如idx=5，n=4，则是第1行第1列。' },
+      { step: 4, question: '🔍 搜索范围是什么？', hint: '一维数组的范围', answer: '左边界left=0，右边界right=m*n-1（总元素数-1）。中间位置mid也是一维下标，需要转换后访问。' }
     ],
     codeSteps: [
-      { title: '定义方法签名', description: '输入矩阵和目标值，输出是否存在', code: 'public boolean searchMatrix(int[][] matrix, int target) {\n    // 待实现\n}', explanation: '返回true或false' },
-      { title: '初始化', description: '把矩阵看作一维数组', code: 'public boolean searchMatrix(int[][] matrix, int target) {\n    int m = matrix.length, n = matrix[0].length;\n    int left = 0, right = m * n - 1;\n}', explanation: '总共m*n个元素' },
-      { title: '二分查找', description: '用下标映射访问元素', code: 'public boolean searchMatrix(int[][] matrix, int target) {\n    int m = matrix.length, n = matrix[0].length;\n    int left = 0, right = m * n - 1;\n    while (left <= right) {\n        int mid = left + (right - left) / 2;\n        int val = matrix[mid / n][mid % n];\n        if (val == target) return true;\n        else if (val < target) left = mid + 1;\n        else right = mid - 1;\n    }\n    return false;\n}', explanation: 'mid/n是行号，mid%n是列号' }
+      { title: '第1步：获取矩阵尺寸和初始化边界', description: '计算总元素数', code: 'public boolean searchMatrix(int[][] matrix, int target) {\n    int m = matrix.length;      // 行数\n    int n = matrix[0].length;   // 列数\n    int left = 0;\n    int right = m * n - 1;      // 总共m*n个元素\n}', explanation: '💡 把矩阵看成一维数组，有m*n个元素，下标从0到m*n-1。' },
+      { title: '第2步：二分查找框架', description: '标准二分结构', code: 'public boolean searchMatrix(int[][] matrix, int target) {\n    int m = matrix.length, n = matrix[0].length;\n    int left = 0, right = m * n - 1;\n    \n    while (left <= right) {\n        int mid = left + (right - left) / 2;\n        // TODO: 获取mid位置的值并比较\n    }\n    return false;\n}', explanation: '🤔 和普通二分完全一样，唯一区别是访问元素时需要下标转换。' },
+      { title: '第3步：下标转换获取元素值', description: '一维下标转二维坐标', code: 'while (left <= right) {\n    int mid = left + (right - left) / 2;\n    // 关键：一维下标转二维坐标\n    int row = mid / n;    // 行号\n    int col = mid % n;    // 列号\n    int val = matrix[row][col];\n    // TODO: 比较val和target\n}', explanation: '🔑 核心映射公式：\\n• row = mid / n（除以列数得到行号）\\n• col = mid % n（模列数得到列号）\\n\\n例如：mid=7, n=4 → row=1, col=3' },
+      { title: '第4步：完整代码', description: '根据比较结果缩小区间', code: 'public boolean searchMatrix(int[][] matrix, int target) {\n    int m = matrix.length, n = matrix[0].length;\n    int left = 0, right = m * n - 1;\n    \n    while (left <= right) {\n        int mid = left + (right - left) / 2;\n        int val = matrix[mid / n][mid % n];\n        \n        if (val == target) {\n            return true;\n        } else if (val < target) {\n            left = mid + 1;\n        } else {\n            right = mid - 1;\n        }\n    }\n    return false;\n}', explanation: '📊 复杂度分析：\\n• 时间：O(log(m*n))，二分查找\\n• 空间：O(1)\\n\\n💡 这道题的关键是识别出矩阵可以展开成有序数组，从而用标准二分解决。' }
     ],
     interview: {
-      approach: '把二维矩阵看作一维有序数组，用二分查找。一维下标i映射到二维(i/n, i%n)。',
-      timeComplexity: 'O(log(m*n))',
-      spaceComplexity: 'O(1)',
+      approach: '【面试回答模板】\\n\\n这道题的关键是发现矩阵的特殊性质：每行递增且下一行比上一行大，展开后就是一个有序数组。\\n\\n因此可以用一次二分查找。把矩阵看成m*n长度的一维数组，一维下标idx转二维坐标：(idx/n, idx%n)。\\n\\n时间O(log(mn))，空间O(1)。',
+      timeComplexity: 'O(log(m*n))，一次二分查找',
+      spaceComplexity: 'O(1)，常数空间',
       followUp: [
-        { question: '如果每行有序但行之间无序？', answer: '从右上角或左下角开始搜索，每次排除一行或一列。' }
+        { question: '如果矩阵只保证每行每列有序，但不保证下一行比上一行大呢？', answer: '那就不能展开成一维了。可以从右上角或左下角开始搜索：比target大就往左走，比target小就往下走。时间O(m+n)。' },
+        { question: '为什么不能用两次二分（先找行再找列）？', answer: '可以用，但代码更复杂。利用矩阵的特殊性质一次二分更简洁。' }
       ]
     }
   },
@@ -1221,20 +1231,25 @@ export const problems: Problem[] = [
       { input: 'nums = [5,7,7,8,8,10], target = 6', output: '[-1,-1]' }
     ],
     thinkingGuide: [
-      { step: 1, question: '如何找第一个位置？', hint: '找到后继续往左', answer: '二分查找，找到target后不停止，继续往左搜索，直到找到第一个。' },
-      { step: 2, question: '如何找最后一个位置？', hint: '找到后继续往右', answer: '类似地，找到后继续往右搜索。' }
+      { step: 1, question: '🎯 题目要求什么？', hint: '找范围', answer: '在有序数组（可能有重复）中找target第一次出现和最后一次出现的位置。比如[5,7,7,8,8,10]中找8，返回[3,4]。' },
+      { step: 2, question: '🤔 普通二分能解决吗？', hint: '找到一个后怎么办', answer: '普通二分找到任意一个8就返回了，但我们需要找第一个和最后一个。需要改进：找到后不停止，继续往一边找。' },
+      { step: 3, question: '📝 如何找第一个位置（左边界）？', hint: '找到后往哪走', answer: '找到target后，不直接返回，而是记录当前位置，然后right = mid - 1继续往左找。循环结束时记录的就是第一个位置。' },
+      { step: 4, question: '📝 如何找最后一个位置（右边界）？', hint: '对称的操作', answer: '找到target后，记录当前位置，然后left = mid + 1继续往右找。循环结束时记录的就是最后一个位置。' },
+      { step: 5, question: '💡 为什么分两次二分？', hint: '代码清晰度', answer: '可以写一个通用函数传参控制方向，但分成findFirst和findLast两个函数更清晰易懂，面试时推荐这种写法。' }
     ],
     codeSteps: [
-      { title: '主方法', description: '分别找左右边界', code: 'public int[] searchRange(int[] nums, int target) {\n    int left = findFirst(nums, target);\n    int right = findLast(nums, target);\n    return new int[] {left, right};\n}', explanation: '调用两个辅助函数' },
-      { title: '找第一个位置', description: '找到后继续往左', code: 'private int findFirst(int[] nums, int target) {\n    int left = 0, right = nums.length - 1;\n    int result = -1;\n    while (left <= right) {\n        int mid = left + (right - left) / 2;\n        if (nums[mid] == target) {\n            result = mid;\n            right = mid - 1;  // 继续往左找\n        } else if (nums[mid] < target) {\n            left = mid + 1;\n        } else {\n            right = mid - 1;\n        }\n    }\n    return result;\n}', explanation: '找到后记录并继续往左' },
-      { title: '找最后一个位置', description: '找到后继续往右', code: 'private int findLast(int[] nums, int target) {\n    int left = 0, right = nums.length - 1;\n    int result = -1;\n    while (left <= right) {\n        int mid = left + (right - left) / 2;\n        if (nums[mid] == target) {\n            result = mid;\n            left = mid + 1;  // 继续往右找\n        } else if (nums[mid] < target) {\n            left = mid + 1;\n        } else {\n            right = mid - 1;\n        }\n    }\n    return result;\n}', explanation: '找到后记录并继续往右' }
+      { title: '第1步：主方法框架', description: '调用两个辅助函数', code: 'public int[] searchRange(int[] nums, int target) {\n    int first = findFirst(nums, target);\n    int last = findLast(nums, target);\n    return new int[] {first, last};\n}', explanation: '💡 分解问题：找左边界和右边界各做一次二分。' },
+      { title: '第2步：findFirst找左边界', description: '找到后继续往左', code: 'private int findFirst(int[] nums, int target) {\n    int left = 0, right = nums.length - 1;\n    int result = -1;  // 没找到返回-1\n    \n    while (left <= right) {\n        int mid = left + (right - left) / 2;\n        if (nums[mid] == target) {\n            result = mid;      // 记录找到的位置\n            right = mid - 1;   // 继续往左找更小的下标\n        } else if (nums[mid] < target) {\n            left = mid + 1;\n        } else {\n            right = mid - 1;\n        }\n    }\n    return result;\n}', explanation: '🔑 关键：找到target后不返回，而是right = mid - 1继续往左找，直到找到第一个。' },
+      { title: '第3步：findLast找右边界', description: '找到后继续往右', code: 'private int findLast(int[] nums, int target) {\n    int left = 0, right = nums.length - 1;\n    int result = -1;\n    \n    while (left <= right) {\n        int mid = left + (right - left) / 2;\n        if (nums[mid] == target) {\n            result = mid;      // 记录找到的位置\n            left = mid + 1;    // 继续往右找更大的下标\n        } else if (nums[mid] < target) {\n            left = mid + 1;\n        } else {\n            right = mid - 1;\n        }\n    }\n    return result;\n}', explanation: '🔑 和findFirst的唯一区别：找到后left = mid + 1往右找，而不是往左。' },
+      { title: '第4步：完整代码汇总', description: '三个方法组合', code: 'public int[] searchRange(int[] nums, int target) {\n    return new int[] {findFirst(nums, target), findLast(nums, target)};\n}\n\nprivate int findFirst(int[] nums, int target) {\n    int left = 0, right = nums.length - 1, result = -1;\n    while (left <= right) {\n        int mid = left + (right - left) / 2;\n        if (nums[mid] == target) { result = mid; right = mid - 1; }\n        else if (nums[mid] < target) left = mid + 1;\n        else right = mid - 1;\n    }\n    return result;\n}\n\nprivate int findLast(int[] nums, int target) {\n    int left = 0, right = nums.length - 1, result = -1;\n    while (left <= right) {\n        int mid = left + (right - left) / 2;\n        if (nums[mid] == target) { result = mid; left = mid + 1; }\n        else if (nums[mid] < target) left = mid + 1;\n        else right = mid - 1;\n    }\n    return result;\n}', explanation: '📊 复杂度：时间O(log n)（两次二分），空间O(1)。' }
     ],
     interview: {
-      approach: '两次二分查找，分别找左边界和右边界。找到target后不停止，继续往一边搜索。',
-      timeComplexity: 'O(log n)',
-      spaceComplexity: 'O(1)',
+      approach: '【面试回答模板】\\n\\n这道题用两次二分查找解决。\\n\\n找左边界：找到target后不停止，继续往左找（right = mid - 1）。\\n找右边界：找到target后不停止，继续往右找（left = mid + 1）。\\n\\n两次二分各O(log n)，总时间O(log n)，空间O(1)。',
+      timeComplexity: 'O(log n)，两次二分查找',
+      spaceComplexity: 'O(1)，常数空间',
       followUp: [
-        { question: '能否一次二分？', answer: '可以，但代码更复杂。两次二分更清晰。' }
+        { question: '能否一次二分？', answer: '可以用一个函数找左边界，然后从那里线性或再二分找右边界。但两次二分代码更清晰。' },
+        { question: '如果target不存在怎么处理？', answer: 'result初始化为-1，如果从未找到就返回-1。两个都是-1就返回[-1,-1]。' }
       ]
     }
   },
@@ -1250,20 +1265,26 @@ export const problems: Problem[] = [
       { input: 'nums = [4,5,6,7,0,1,2], target = 3', output: '-1' }
     ],
     thinkingGuide: [
-      { step: 1, question: '旋转数组有什么特点？', hint: '分成两段', answer: '旋转后分成两段有序数组，一段在前一段在后。' },
-      { step: 2, question: '如何判断mid在哪段？', hint: '和边界比较', answer: '如果nums[mid] >= nums[left]，mid在左段；否则在右段。' },
-      { step: 3, question: '如何决定搜索方向？', hint: '判断target在有序的那段', answer: '确定mid在哪段后，判断target是否在有序的那半边，决定搜索方向。' }
+      { step: 1, question: '🎯 旋转数组有什么特点？', hint: '画图理解', answer: '比如[4,5,6,7,0,1,2]是[0,1,2,4,5,6,7]旋转得到。旋转后分成两段有序子数组：[4,5,6,7]和[0,1,2]，前段所有元素都大于后段。' },
+      { step: 2, question: '🤔 能直接二分吗？', hint: '数组不完全有序', answer: '不能直接二分，但可以利用一个性质：虽然整体不有序，但左右两半至少有一半是有序的！' },
+      { step: 3, question: '📝 如何判断哪半边有序？', hint: '和左边界比较', answer: '如果nums[mid] >= nums[left]，说明左半段[left, mid]是有序的。否则右半段[mid, right]是有序的。' },
+      { step: 4, question: '🔍 知道哪半边有序后怎么办？', hint: '判断target在不在有序的那半边', answer: '如果左半边有序，检查target是否落在[nums[left], nums[mid])区间内。如果是，往左找；否则往右找。右半边有序同理。' },
+      { step: 5, question: '💡 为什么这样能找到？', hint: '排除法', answer: '每次都能确定target在哪半边：要么在有序的那半边（直接判断范围），要么在无序的那半边。无序那半边继续用同样方法处理。' }
     ],
     codeSteps: [
-      { title: '定义方法签名', description: '输入旋转数组和目标值，输出下标', code: 'public int search(int[] nums, int target) {\n    // 待实现\n}', explanation: '返回下标或-1' },
-      { title: '二分查找', description: '判断有序区间并搜索', code: 'public int search(int[] nums, int target) {\n    int left = 0, right = nums.length - 1;\n    while (left <= right) {\n        int mid = left + (right - left) / 2;\n        if (nums[mid] == target) return mid;\n        \n        if (nums[mid] >= nums[left]) {\n            // 左半段有序\n            if (target >= nums[left] && target < nums[mid]) {\n                right = mid - 1;\n            } else {\n                left = mid + 1;\n            }\n        } else {\n            // 右半段有序\n            if (target > nums[mid] && target <= nums[right]) {\n                left = mid + 1;\n            } else {\n                right = mid - 1;\n            }\n        }\n    }\n    return -1;\n}', explanation: '先判断哪半段有序，再判断target在不在有序段' }
+      { title: '第1步：初始化边界', description: '标准二分框架', code: 'public int search(int[] nums, int target) {\n    int left = 0;\n    int right = nums.length - 1;\n    // TODO: 二分查找\n}', explanation: '和普通二分一样的起点。' },
+      { title: '第2步：二分循环和判断mid', description: '先判断是否找到', code: 'while (left <= right) {\n    int mid = left + (right - left) / 2;\n    \n    if (nums[mid] == target) {\n        return mid;  // 找到了直接返回\n    }\n    // TODO: 判断哪半边有序，决定搜索方向\n}\nreturn -1;', explanation: '先处理最简单的情况：直接找到target。' },
+      { title: '第3步：判断左半边是否有序', description: '和左边界比较', code: 'if (nums[mid] >= nums[left]) {\n    // 左半段 [left, mid] 是有序的\n    if (target >= nums[left] && target < nums[mid]) {\n        // target在有序的左半段\n        right = mid - 1;\n    } else {\n        // target在右半段\n        left = mid + 1;\n    }\n}', explanation: '🔑 关键判断：\n• nums[mid] >= nums[left] → 左半段有序\n• target在[nums[left], nums[mid])范围内 → 往左找\n• 否则 → 往右找' },
+      { title: '第4步：处理右半边有序的情况', description: '对称的逻辑', code: 'else {\n    // 右半段 [mid, right] 是有序的\n    if (target > nums[mid] && target <= nums[right]) {\n        // target在有序的右半段\n        left = mid + 1;\n    } else {\n        // target在左半段\n        right = mid - 1;\n    }\n}', explanation: '🔑 和左半边对称：\n• 右半段有序\n• target在(nums[mid], nums[right]]范围内 → 往右找\n• 否则 → 往左找' },
+      { title: '第5步：完整代码', description: '组合所有逻辑', code: 'public int search(int[] nums, int target) {\n    int left = 0, right = nums.length - 1;\n    \n    while (left <= right) {\n        int mid = left + (right - left) / 2;\n        if (nums[mid] == target) return mid;\n        \n        if (nums[mid] >= nums[left]) {\n            // 左半段有序\n            if (target >= nums[left] && target < nums[mid]) {\n                right = mid - 1;\n            } else {\n                left = mid + 1;\n            }\n        } else {\n            // 右半段有序\n            if (target > nums[mid] && target <= nums[right]) {\n                left = mid + 1;\n            } else {\n                right = mid - 1;\n            }\n        }\n    }\n    return -1;\n}', explanation: '📊 复杂度：时间O(log n)，空间O(1)。\n\n💡 记忆技巧：先判断哪半边有序，再判断target在不在有序那半边。' }
     ],
     interview: {
-      approach: '二分查找。每次先判断mid在左段还是右段（通过和left比较），然后判断target是否在有序的那半边，决定搜索方向。',
-      timeComplexity: 'O(log n)',
-      spaceComplexity: 'O(1)',
+      approach: '【面试回答模板】\\n\\n这道题用二分查找。关键观察是：旋转数组分成两段，每次二分至少有一半是有序的。\\n\\n每次循环：\\n1. 判断nums[mid] >= nums[left]确定左半段是否有序\\n2. 检查target是否落在有序那半边的范围内\\n3. 根据结果决定往哪边找\\n\\n时间O(log n)，空间O(1)。',
+      timeComplexity: 'O(log n)，标准二分',
+      spaceComplexity: 'O(1)，常数空间',
       followUp: [
-        { question: '如果有重复元素？', answer: '当nums[mid] == nums[left]时，无法判断在哪段，只能left++跳过。最坏O(n)。' }
+        { question: '如果数组有重复元素怎么办？', answer: '当nums[mid] == nums[left]时，无法判断在哪段，只能left++跳过。最坏情况变成O(n)，比如[1,1,1,1,1]。' },
+        { question: '为什么用>=而不是>来判断左半边有序？', answer: '考虑只有两个元素的情况：[3,1]，mid=0=left，需要>=才能正确判断左半边有序。' }
       ]
     }
   },
@@ -1279,20 +1300,25 @@ export const problems: Problem[] = [
       { input: 'nums = [4,5,6,7,0,1,2]', output: '0' }
     ],
     thinkingGuide: [
-      { step: 1, question: '最小值在哪里？', hint: '旋转点', answer: '最小值在旋转点，即从大变小的位置。' },
-      { step: 2, question: '如何用二分找旋转点？', hint: '和右边界比较', answer: '如果nums[mid] > nums[right]，最小值在右半边；否则在左半边（包括mid）。' }
+      { step: 1, question: '🎯 最小值在哪里？', hint: '旋转点', answer: '旋转数组比如[3,4,5,1,2]，最小值就在旋转点，即从大变小的位置。5到→1这里，1就是最小值。' },
+      { step: 2, question: '🤔 如果没有旋转呢？', hint: '比如[1,2,3]', answer: '没有旋转时，数组完全有序，第一个元素就是最小值。我们的二分算法也能处理这种情况。' },
+      { step: 3, question: '📝 如何用二分找旋转点？', hint: '和哪个边界比较', answer: '和right比较：如果nums[mid] > nums[right]，说明旋转点在mid右边；否则在mid左边或就是mid。' },
+      { step: 4, question: '❓ 为什么和right比较而不和left比较？', hint: '思考未旋转的情况', answer: '如果用nums[mid] > nums[left]来判断，当数组未旋转时（如[1,2,3]），中间元素总是大于左边的，无法区分是否旋转过。' },
+      { step: 5, question: '🔑 这道题的二分有什么特殊之处？', hint: '循环条件和right更新', answer: '循环条件是left < right（不是<=），因为我们最终要找到一个位置，不是判断存在不存在。right = mid（不是mid-1），因为mid本身可能是最小值。' }
     ],
     codeSteps: [
-      { title: '定义方法签名', description: '输入旋转数组，输出最小值', code: 'public int findMin(int[] nums) {\n    // 待实现\n}', explanation: '返回最小值' },
-      { title: '二分查找', description: '找旋转点', code: 'public int findMin(int[] nums) {\n    int left = 0, right = nums.length - 1;\n    while (left < right) {\n        int mid = left + (right - left) / 2;\n        if (nums[mid] > nums[right]) {\n            left = mid + 1;\n        } else {\n            right = mid;\n        }\n    }\n    return nums[left];\n}', explanation: '注意是left < right，不是<=；right = mid不是mid-1' }
+      { title: '第1步：初始化边界', description: '左闭右闭区间', code: 'public int findMin(int[] nums) {\n    int left = 0;\n    int right = nums.length - 1;\n    // TODO: 二分找旋转点\n}', explanation: '和普通二分一样的初始化。' },
+      { title: '第2步：二分循环（注意条件）', description: 'left < right', code: 'public int findMin(int[] nums) {\n    int left = 0, right = nums.length - 1;\n    \n    while (left < right) {  // 注意：是<不是<=\n        int mid = left + (right - left) / 2;\n        // TODO: 和right比较并缩小范围\n    }\n    return nums[left];\n}', explanation: '🤔 为什么是left < right？\n因为我们要找到一个具体位置，当left == right时就找到了。' },
+      { title: '第3步：和right比较决定方向', description: '判断最小值在哪边', code: 'while (left < right) {\n    int mid = left + (right - left) / 2;\n    \n    if (nums[mid] > nums[right]) {\n        // mid在左段，最小值在mid右边\n        left = mid + 1;\n    } else {\n        // mid在右段或未旋转，最小值在mid左边或就是mid\n        right = mid;  // 注意：不是mid-1\n    }\n}', explanation: '🔑 关键逻辑：\n• nums[mid] > nums[right]：中间比右边大，说明旋转点在右边\n• 否则：旋转点在左边或就是mid，所以right = mid' },
+      { title: '第4步：完整代码', description: '返回最小值', code: 'public int findMin(int[] nums) {\n    int left = 0, right = nums.length - 1;\n    \n    while (left < right) {\n        int mid = left + (right - left) / 2;\n        if (nums[mid] > nums[right]) {\n            left = mid + 1;\n        } else {\n            right = mid;\n        }\n    }\n    return nums[left];  // 或nums[right]，此时left == right\n}', explanation: '📊 复杂度：时间O(log n)，空间O(1)。\n\n💡 记忆技巧：这是“找最小值”型二分，特点是：\n• 循环条件left < right\n• right = mid（不排除mid）\n• 最终left指向答案' }
     ],
     interview: {
-      approach: '二分查找找旋转点。和右边界比较：如果nums[mid] > nums[right]，最小值在右边；否则在左边（包括mid）。',
+      approach: '【面试回答模板】\\n\\n这道题用二分查找找旋转点。\\n\\n关键是和right比较：\\n• nums[mid] > nums[right]：最小值在右边，left = mid + 1\\n• 否则：最小值在左边或就是mid，right = mid\\n\\n这是“找最小值”型二分，循环用left < right。\\n\\n时间O(log n)，空间O(1)。',
       timeComplexity: 'O(log n)',
       spaceComplexity: 'O(1)',
       followUp: [
-        { question: '为什么和右边界比较？', answer: '和左边界比较无法区分是否旋转过。' },
-        { question: '如果有重复元素？', answer: '当nums[mid] == nums[right]时，right--跳过。最坏O(n)。' }
+        { question: '为什么和right比较而不是left？', answer: '和left比较无法区分有没有旋转。比如[1,2,3]，mid总是>left，但它没有旋转。' },
+        { question: '如果有重复元素怎么办？', answer: '当nums[mid] == nums[right]时，无法判断在哪边，只能right--跳过。最坏情况O(n)。' }
       ]
     }
   },
@@ -1308,19 +1334,26 @@ export const problems: Problem[] = [
       { input: 'nums1 = [1,2], nums2 = [3,4]', output: '2.50000', explanation: '合并数组 = [1,2,3,4]，中位数 (2 + 3) / 2 = 2.5' }
     ],
     thinkingGuide: [
-      { step: 1, question: '中位数的本质是什么？', hint: '分割', answer: '把所有元素分成两半，左半边最大值 <= 右半边最小值，中位数就是分割点的值。' },
-      { step: 2, question: '如何二分？', hint: '在较短数组上二分', answer: '在较短数组上二分找分割点，另一个数组的分割点可以计算出来。' }
+      { step: 1, question: '🎯 中位数的本质是什么？', hint: '分割', answer: '中位数把所有元素分成相等的两半，左半边最大值 <= 右半边最小值。如果总数为奇，中位数=左半最大值；如果为偶，中位数=（左半最大+右半最小）/2。' },
+      { step: 2, question: '🤔 最简单的方法是什么？', hint: '合并数组', answer: '合并两个有序数组，然后找中间位置。时间O(m+n)，但题目要求O(log(m+n))。' },
+      { step: 3, question: '📝 如何用二分达到O(log)？', hint: '在哪里二分', answer: '在较短的数组上二分找分割点i，另一个数组的分割点j可以计算得到：j = (m+n+1)/2 - i。' },
+      { step: 4, question: '🔍 什么是正确的分割？', hint: '左边要小于右边', answer: '分割正确的条件：maxLeft1 <= minRight2 且 maxLeft2 <= minRight1，即左半边最大值小于等于右半边最小值。' },
+      { step: 5, question: '❓ 如果分割不对怎么调整？', hint: '移动分割点', answer: '如果maxLeft1 > minRight2，说明数组1左边太大，分割点要左移；否则右移。' }
     ],
     codeSteps: [
-      { title: '确保nums1较短', description: '在较短数组上二分', code: 'public double findMedianSortedArrays(int[] nums1, int[] nums2) {\n    if (nums1.length > nums2.length) {\n        return findMedianSortedArrays(nums2, nums1);\n    }\n    int m = nums1.length, n = nums2.length;\n}', explanation: '交换保证nums1较短' },
-      { title: '二分查找分割点', description: '找到正确的分割位置', code: 'public double findMedianSortedArrays(int[] nums1, int[] nums2) {\n    if (nums1.length > nums2.length) {\n        return findMedianSortedArrays(nums2, nums1);\n    }\n    int m = nums1.length, n = nums2.length;\n    int left = 0, right = m;\n    while (left <= right) {\n        int i = (left + right) / 2;\n        int j = (m + n + 1) / 2 - i;\n        \n        int maxLeft1 = (i == 0) ? Integer.MIN_VALUE : nums1[i-1];\n        int minRight1 = (i == m) ? Integer.MAX_VALUE : nums1[i];\n        int maxLeft2 = (j == 0) ? Integer.MIN_VALUE : nums2[j-1];\n        int minRight2 = (j == n) ? Integer.MAX_VALUE : nums2[j];\n        \n        if (maxLeft1 <= minRight2 && maxLeft2 <= minRight1) {\n            if ((m + n) % 2 == 0) {\n                return (Math.max(maxLeft1, maxLeft2) + Math.min(minRight1, minRight2)) / 2.0;\n            } else {\n                return Math.max(maxLeft1, maxLeft2);\n            }\n        } else if (maxLeft1 > minRight2) {\n            right = i - 1;\n        } else {\n            left = i + 1;\n        }\n    }\n    return 0;\n}', explanation: 'i是nums1的分割点，j是nums2的分割点，满足i+j=(m+n+1)/2' }
+      { title: '第1步：确保nums1是较短的数组', description: '在较短数组上二分', code: 'public double findMedianSortedArrays(int[] nums1, int[] nums2) {\n    // 确保enums1是较短的\n    if (nums1.length > nums2.length) {\n        return findMedianSortedArrays(nums2, nums1);\n    }\n    int m = nums1.length, n = nums2.length;\n    // TODO: 二分找分割点\n}', explanation: '💡 在较短数组上二分可以减少搜索范围，也保证j不会越界。' },
+      { title: '第2步：二分查找分割点', description: '设置边界和循环', code: 'int left = 0, right = m;  // 在nums1上二分\n\nwhile (left <= right) {\n    int i = (left + right) / 2;     // nums1的分割点\n    int j = (m + n + 1) / 2 - i;    // nums2的分割点\n    // TODO: 计算左右边界并判断\n}', explanation: '🔑 核心关系：i + j = (m + n + 1) / 2\n这保证左半边有(m+n+1)/2个元素。' },
+      { title: '第3步：计算分割点两侧的值', description: '处理边界情况', code: '// 左半边最大值\nint maxLeft1 = (i == 0) ? Integer.MIN_VALUE : nums1[i-1];\nint maxLeft2 = (j == 0) ? Integer.MIN_VALUE : nums2[j-1];\n\n// 右半边最小值\nint minRight1 = (i == m) ? Integer.MAX_VALUE : nums1[i];\nint minRight2 = (j == n) ? Integer.MAX_VALUE : nums2[j];', explanation: '❗ 边界处理很重要！\n• i==0时nums1左半边为空，用MIN_VALUE\n• i==m时nums1右半边为空，用MAX_VALUE\n这样不影响max/min的计算。' },
+      { title: '第4步：判断分割是否正确', description: '调整或返回结果', code: 'if (maxLeft1 <= minRight2 && maxLeft2 <= minRight1) {\n    // 分割正确，计算中位数\n    if ((m + n) % 2 == 1) {\n        return Math.max(maxLeft1, maxLeft2);\n    } else {\n        return (Math.max(maxLeft1, maxLeft2) + \n                Math.min(minRight1, minRight2)) / 2.0;\n    }\n} else if (maxLeft1 > minRight2) {\n    right = i - 1;  // nums1左边太大，左移i\n} else {\n    left = i + 1;   // nums1左边太小，右移i\n}', explanation: '🔑 分割正确的条件：\n• 左半边最大 <= 右半边最小\n• 即maxLeft1 <= minRight2 且 maxLeft2 <= minRight1' },
+      { title: '第5步：完整代码', description: '组合所有逻辑', code: 'public double findMedianSortedArrays(int[] nums1, int[] nums2) {\n    if (nums1.length > nums2.length) {\n        return findMedianSortedArrays(nums2, nums1);\n    }\n    int m = nums1.length, n = nums2.length;\n    int left = 0, right = m;\n    \n    while (left <= right) {\n        int i = (left + right) / 2;\n        int j = (m + n + 1) / 2 - i;\n        \n        int maxLeft1 = (i == 0) ? Integer.MIN_VALUE : nums1[i-1];\n        int minRight1 = (i == m) ? Integer.MAX_VALUE : nums1[i];\n        int maxLeft2 = (j == 0) ? Integer.MIN_VALUE : nums2[j-1];\n        int minRight2 = (j == n) ? Integer.MAX_VALUE : nums2[j];\n        \n        if (maxLeft1 <= minRight2 && maxLeft2 <= minRight1) {\n            if ((m + n) % 2 == 1) {\n                return Math.max(maxLeft1, maxLeft2);\n            } else {\n                return (Math.max(maxLeft1, maxLeft2) + \n                        Math.min(minRight1, minRight2)) / 2.0;\n            }\n        } else if (maxLeft1 > minRight2) {\n            right = i - 1;\n        } else {\n            left = i + 1;\n        }\n    }\n    return 0;\n}', explanation: '📊 复杂度：时间O(log(min(m,n)))，空间O(1)。\n\n💡 这是一道经典难题，面试时如果写不出来，可以先说思路，再说合并法O(m+n)的解法。' }
     ],
     interview: {
-      approach: '在较短数组上二分找分割点。分割点把两个数组分成左右两半，使得左半边最大值 <= 右半边最小值。',
-      timeComplexity: 'O(log(min(m,n)))',
-      spaceComplexity: 'O(1)',
+      approach: '【面试回答模板】\\n\\n这道题的核心思想是二分查找分割点。\\n\\n中位数把所有元素分成两半，左半最大 <= 右半最小。在较短数组上二分找i，另一个数组的j = (m+n+1)/2 - i。\\n\\n检查分割是否正确：maxLeft1 <= minRight2 且 maxLeft2 <= minRight1。\\n\\n时间O(log(min(m,n)))，空间O(1)。',
+      timeComplexity: 'O(log(min(m,n)))，在较短数组上二分',
+      spaceComplexity: 'O(1)，只用常数空间',
       followUp: [
-        { question: '为什么在较短数组上二分？', answer: '保证j不会越界，且减少二分次数。' }
+        { question: '为什么在较短数组上二分？', answer: '两个原因：1. 减少二分次数；2. 保证j不会越界（如果i取到最大，j可能为负）。' },
+        { question: '这道题太难了怎么办？', answer: '面试时先说思路：二分找分割点。如果写不出来，说清楚合并法O(m+n)的解法也可以部分得分。' }
       ]
     }
   },
@@ -1338,19 +1371,25 @@ export const problems: Problem[] = [
       { input: 's = "(]"', output: 'false' }
     ],
     thinkingGuide: [
-      { step: 1, question: '为什么用栈？', hint: '后进先出', answer: '括号匹配是后进先出的：最后出现的左括号要最先匹配。' },
-      { step: 2, question: '遇到右括号怎么办？', hint: '和栈顶比较', answer: '检查栈顶是否是对应的左括号，是则出栈，否则无效。' }
+      { step: 1, question: '🎯 括号匹配的规则是什么？', hint: '配对和顺序', answer: '每个左括号必须有对应的右括号闭合，且必须按正确顺序闭合。比如"([])"有效，"([)]"无效。' },
+      { step: 2, question: '🤔 为什么用栈？', hint: '后进先出', answer: '最后出现的左括号要最先匹配（被最近的右括号闭合）。这正是栈的后进先出特性！' },
+      { step: 3, question: '📝 遇到左括号怎么办？', hint: '保存起来等待匹配', answer: '直接入栈，等待后续的右括号来匹配。' },
+      { step: 4, question: '📝 遇到右括号怎么办？', hint: '和栈顶比较', answer: '检查栈顶是否是对应的左括号。是则弹出（匹配成功），否则返回false（匹配失败）。' },
+      { step: 5, question: '⚠️ 最后还要检查什么？', hint: '可能有剩余', answer: '遍历结束后栈必须为空！如果还有剩余左括号没被匹配，也是无效的。' }
     ],
     codeSteps: [
-      { title: '定义方法签名', description: '输入字符串，输出是否有效', code: 'public boolean isValid(String s) {\n    // 待实现\n}', explanation: '返回true或false' },
-      { title: '使用栈', description: '遍历字符串处理括号', code: 'public boolean isValid(String s) {\n    Stack<Character> stack = new Stack<>();\n    for (char c : s.toCharArray()) {\n        if (c == \'(\' || c == \'[\' || c == \'{\') {\n            stack.push(c);\n        } else {\n            if (stack.isEmpty()) return false;\n            char top = stack.pop();\n            if (c == \')\' && top != \'(\') return false;\n            if (c == \']\' && top != \'[\') return false;\n            if (c == \'}\' && top != \'{\') return false;\n        }\n    }\n    return stack.isEmpty();\n}', explanation: '左括号入栈，右括号检查匹配' }
+      { title: '第1步：创建栈', description: '用于存储未匹配的左括号', code: 'public boolean isValid(String s) {\n    Stack<Character> stack = new Stack<>();\n    // TODO: 遍历处理每个字符\n}', explanation: '💡 栈存储遇到的左括号，等待后续右括号匹配。' },
+      { title: '第2步：遍历处理左括号', description: '左括号直接入栈', code: 'for (char c : s.toCharArray()) {\n    if (c == \'(\' || c == \'[\' || c == \'{\') {\n        stack.push(c);\n    } else {\n        // TODO: 处理右括号\n    }\n}', explanation: '遇到左括号就入栈，等待匹配。' },
+      { title: '第3步：处理右括号', description: '检查栈顶是否匹配', code: 'else {\n    if (stack.isEmpty()) return false;  // 没有左括号可匹配\n    char top = stack.pop();\n    if (c == \')\' && top != \'(\') return false;\n    if (c == \']\' && top != \'[\') return false;\n    if (c == \'}\' && top != \'{\') return false;\n}', explanation: '🔑 关键：右括号必须和栈顶的左括号类型匹配。' },
+      { title: '第4步：完整代码', description: '最后检查栈是否为空', code: 'public boolean isValid(String s) {\n    Stack<Character> stack = new Stack<>();\n    for (char c : s.toCharArray()) {\n        if (c == \'(\' || c == \'[\' || c == \'{\') {\n            stack.push(c);\n        } else {\n            if (stack.isEmpty()) return false;\n            char top = stack.pop();\n            if (c == \')\' && top != \'(\') return false;\n            if (c == \']\' && top != \'[\') return false;\n            if (c == \'}\' && top != \'{\') return false;\n        }\n    }\n    return stack.isEmpty();  // 栈为空才是有效的\n}', explanation: '📊 复杂度：时间O(n)，空间O(n)。\\n\\n💡 常见错误：忘记最后检查栈是否为空。比如"((("会把所有左括号入栈，但没有右括号匹配，应该返回false。' }
     ],
     interview: {
-      approach: '用栈。遇到左括号入栈，遇到右括号检查栈顶是否匹配。最后栈为空则有效。',
-      timeComplexity: 'O(n)',
-      spaceComplexity: 'O(n)',
+      approach: '【面试回答模板】\\n\\n用栈解决。遇到左括号入栈，遇到右括号检查栈顶是否匹配。最后栈为空才有效。\\n\\n时间O(n)，空间O(n)。',
+      timeComplexity: 'O(n)，遍历一次字符串',
+      spaceComplexity: 'O(n)，最坏情况全是左括号',
       followUp: [
-        { question: '如何优化？', answer: '可以用HashMap存储括号对应关系，代码更简洁。' }
+        { question: '如何优化代码？', answer: '用HashMap存储括号对应关系：map.put(\')\', \'(\')，代码更简洁。' },
+        { question: '如果只有一种括号呢？', answer: '可以用计数器代替栈，遇到左括号+1，右括号-1，过程中不能为负，最后为0。' }
       ]
     }
   },
@@ -1365,20 +1404,23 @@ export const problems: Problem[] = [
       { input: '["MinStack","push","push","push","getMin","pop","top","getMin"]\n[[],[-2],[0],[-3],[],[],[],[]]', output: '[null,null,null,null,-3,null,0,-2]' }
     ],
     thinkingGuide: [
-      { step: 1, question: '如何O(1)获取最小值？', hint: '额外存储', answer: '用辅助栈存储每个状态下的最小值。' },
-      { step: 2, question: '辅助栈如何维护？', hint: '和主栈同步', answer: 'push时，辅助栈压入当前最小值；pop时，辅助栈也弹出。' }
+      { step: 1, question: '🎯 题目要求什么？', hint: 'O(1)获取最小值', answer: '设计一个栈，除了普通的push/pop/top操作，还要能在O(1)时间内获取栈中的最小元素。' },
+      { step: 2, question: '🤔 为什么普通栈不行？', hint: '每次都要遍历', answer: '普通栈获取最小值需要遍历所有元素，是O(n)。而且pop后最小值可能改变，需要重新计算。' },
+      { step: 3, question: '💡 核心思想是什么？', hint: '辅助栈', answer: '用一个辅助栈minStack，同步记录每个状态下的最小值。每次push/pop时，minStack也同步操作。' },
+      { step: 4, question: '📝 push时minStack怎么更新？', hint: '和当前最小值比较', answer: '比较新元素和minStack栈顶，压入较小的那个。这样minStack栈顶始终是当前最小值。' }
     ],
     codeSteps: [
-      { title: '定义数据结构', description: '两个栈', code: 'class MinStack {\n    private Stack<Integer> stack;\n    private Stack<Integer> minStack;\n    \n    public MinStack() {\n        stack = new Stack<>();\n        minStack = new Stack<>();\n    }\n}', explanation: 'stack存数据，minStack存最小值' },
-      { title: '实现push', description: '同时更新最小值栈', code: 'public void push(int val) {\n    stack.push(val);\n    if (minStack.isEmpty() || val <= minStack.peek()) {\n        minStack.push(val);\n    } else {\n        minStack.push(minStack.peek());\n    }\n}', explanation: '压入当前最小值' },
-      { title: '实现其他方法', description: 'pop, top, getMin', code: 'public void pop() {\n    stack.pop();\n    minStack.pop();\n}\n\npublic int top() {\n    return stack.peek();\n}\n\npublic int getMin() {\n    return minStack.peek();\n}', explanation: 'getMin直接返回minStack栈顶' }
+      { title: '第1步：定义数据结构', description: '两个栈', code: 'class MinStack {\n    private Stack<Integer> stack;\n    private Stack<Integer> minStack;\n    \n    public MinStack() {\n        stack = new Stack<>();\n        minStack = new Stack<>();\n    }\n}', explanation: '💡 stack存数据，minStack存每个状态的最小值。' },
+      { title: '第2步：实现push', description: '同步更新最小值栈', code: 'public void push(int val) {\n    stack.push(val);\n    if (minStack.isEmpty() || val <= minStack.peek()) {\n        minStack.push(val);\n    } else {\n        minStack.push(minStack.peek());  // 压入当前最小值\n    }\n}', explanation: '🔑 关键：minStack始终和stack同步，栈顶是当前状态的最小值。' },
+      { title: '第3步：实现pop和top', description: '同步弹出', code: 'public void pop() {\n    stack.pop();\n    minStack.pop();  // 同步弹出\n}\n\npublic int top() {\n    return stack.peek();\n}', explanation: 'pop时两个栈都弹出，保持同步。' },
+      { title: '第4步：实现getMin', description: 'O(1)返回最小值', code: 'public int getMin() {\n    return minStack.peek();\n}', explanation: '🎉 minStack栈顶就是当前最小值，O(1)！' }
     ],
     interview: {
-      approach: '用辅助栈存储每个状态下的最小值。push时压入当前最小值，pop时同步弹出。',
-      timeComplexity: 'O(1)，所有操作都是O(1)',
+      approach: '【面试回答模板】\\n\\n用辅助栈minStack同步记录每个状态的最小值。push时压入当前最小值，pop时同步弹出。getMin直接返回minStack栈顶。\\n\\n所有操作O(1)，空间O(n)。',
+      timeComplexity: 'O(1)，所有操作',
       spaceComplexity: 'O(n)，辅助栈',
       followUp: [
-        { question: '能否只用一个栈？', answer: '可以，存储差值或者存储(val, min)对。' }
+        { question: '能否只用一个栈？', answer: '可以，存储差值（val - min），或存储(val, min)对。' }
       ]
     }
   },
@@ -1394,15 +1436,19 @@ export const problems: Problem[] = [
       { input: 's = "3[a2[c]]"', output: '"accaccacc"' }
     ],
     thinkingGuide: [
-      { step: 1, question: '为什么用栈？', hint: '嵌套结构', answer: '括号可能嵌套，需要从内到外处理，符合栈的后进先出。' },
-      { step: 2, question: '栈里存什么？', hint: '遇到[时保存状态', answer: '存储当前的字符串和重复次数，遇到]时恢复并拼接。' }
+      { step: 1, question: '🎯 解码规则是什么？', hint: 'k[字符串]', answer: '数字k后面跟着[字符串]，表示里面的内容重复k次。可能嵌套，如3[a2[c]]解码为accaccacc。' },
+      { step: 2, question: '🤔 为什么用栈？', hint: '嵌套结构', answer: '括号可能嵌套，需要从内到外处理。这正是栈的后进先出特性！' },
+      { step: 3, question: '📝 栈里存什么？', hint: '遇到[时保存状态', answer: '用两个栈：countStack存重复次数，stringStack存之前的字符串。遇到[时保存当前状态，遇到]时恢复并拼接。' },
+      { step: 4, question: '🔄 如何处理多位数字？', hint: '比如10[a]', answer: '数字可能有多位，用k = k * 10 + (c - \'0\')累加计算。' }
     ],
     codeSteps: [
-      { title: '定义方法签名', description: '输入编码字符串，输出解码结果', code: 'public String decodeString(String s) {\n    // 待实现\n}', explanation: '返回解码后的字符串' },
-      { title: '使用栈处理', description: '遍历字符分类处理', code: 'public String decodeString(String s) {\n    Stack<Integer> countStack = new Stack<>();\n    Stack<StringBuilder> stringStack = new Stack<>();\n    StringBuilder current = new StringBuilder();\n    int k = 0;\n    \n    for (char c : s.toCharArray()) {\n        if (Character.isDigit(c)) {\n            k = k * 10 + (c - \'0\');\n        } else if (c == \'[\') {\n            countStack.push(k);\n            stringStack.push(current);\n            current = new StringBuilder();\n            k = 0;\n        } else if (c == \']\') {\n            int count = countStack.pop();\n            StringBuilder prev = stringStack.pop();\n            for (int i = 0; i < count; i++) {\n                prev.append(current);\n            }\n            current = prev;\n        } else {\n            current.append(c);\n        }\n    }\n    return current.toString();\n}', explanation: '遇到[保存状态，遇到]恢复并重复' }
+      { title: '第1步：初始化栈和变量', description: '准备数据结构', code: 'public String decodeString(String s) {\n    Stack<Integer> countStack = new Stack<>();\n    Stack<StringBuilder> stringStack = new Stack<>();\n    StringBuilder current = new StringBuilder();\n    int k = 0;\n    // TODO: 遍历处理\n}', explanation: 'countStack存重复次数，stringStack存之前的字符串，current是当前正在构建的字符串。' },
+      { title: '第2步：处理数字和字母', description: '累加数字，拼接字母', code: 'for (char c : s.toCharArray()) {\n    if (Character.isDigit(c)) {\n        k = k * 10 + (c - \'0\');  // 处理多位数\n    } else if (Character.isLetter(c)) {\n        current.append(c);\n    }\n    // TODO: 处理[和]\n}', explanation: '数字可能多位，要累加。字母直接加到current。' },
+      { title: '第3步：处理[和]', description: '保存和恢复状态', code: 'else if (c == \'[\') {\n    countStack.push(k);\n    stringStack.push(current);\n    current = new StringBuilder();\n    k = 0;\n} else if (c == \']\') {\n    int count = countStack.pop();\n    StringBuilder prev = stringStack.pop();\n    for (int i = 0; i < count; i++) {\n        prev.append(current);\n    }\n    current = prev;\n}', explanation: '🔑 关键逻辑：\n• [：保存当前状态，开始新的收集\n• ]：恢复之前状态，重复拼接' },
+      { title: '第4步：完整代码', description: '汇总所有逻辑', code: 'public String decodeString(String s) {\n    Stack<Integer> countStack = new Stack<>();\n    Stack<StringBuilder> stringStack = new Stack<>();\n    StringBuilder current = new StringBuilder();\n    int k = 0;\n    \n    for (char c : s.toCharArray()) {\n        if (Character.isDigit(c)) {\n            k = k * 10 + (c - \'0\');\n        } else if (c == \'[\') {\n            countStack.push(k);\n            stringStack.push(current);\n            current = new StringBuilder();\n            k = 0;\n        } else if (c == \']\') {\n            int count = countStack.pop();\n            StringBuilder prev = stringStack.pop();\n            for (int i = 0; i < count; i++) prev.append(current);\n            current = prev;\n        } else {\n            current.append(c);\n        }\n    }\n    return current.toString();\n}', explanation: '📊 复杂度：时间O(n)，n是解码后的长度；空间O(n)。' }
     ],
     interview: {
-      approach: '用两个栈，一个存重复次数，一个存字符串。遇到[保存当前状态，遇到]恢复并重复拼接。',
+      approach: '【面试回答模板】\\n\\n用两个栈：countStack存重复次数，stringStack存字符串。\\n\\n遇到[时保存当前状态，遇到]时恢复状态并重复拼接。\\n\\n时间空间都O(n)。',
       timeComplexity: 'O(n)，n是解码后的长度',
       spaceComplexity: 'O(n)',
       followUp: [
@@ -1422,16 +1468,19 @@ export const problems: Problem[] = [
       { input: 'temperatures = [30,40,50,60]', output: '[1,1,1,0]' }
     ],
     thinkingGuide: [
-      { step: 1, question: '暴力解法是什么？', hint: '对每天向后找', answer: '对每天向后遍历找第一个更高的温度，时间O(n²)。' },
-      { step: 2, question: '如何优化？', hint: '单调栈', answer: '用单调递减栈，栈里存下标。遇到更高温度时，弹出所有比它低的，计算天数差。' }
+      { step: 1, question: '🎯 题目要求什么？', hint: '找下一个更高温度', answer: '对每一天，找到下一个更高温度出现在几天后。比如[73,74,75,71,69,72,76,73]，第一天等待1天，第三天等待4天。' },
+      { step: 2, question: '🤔 暴力解法是什么？', hint: '对每天向后找', answer: '对每一天，向后遍历找第一个更高的温度。时间O(n²)，可以优化。' },
+      { step: 3, question: '💡 单调栈是什么？', hint: '栈内元素有序', answer: '单调栈是栈内元素保持递增或递减的栈。这道题用递减栈，栈顶是最近的未找到答案的元素。' },
+      { step: 4, question: '📝 为什么栈里存下标？', hint: '需要计算天数差', answer: '存下标而不是值，因为需要计算“等待天数”= 当前下标 - 栈内下标。' }
     ],
     codeSteps: [
-      { title: '定义方法签名', description: '输入温度数组，输出等待天数数组', code: 'public int[] dailyTemperatures(int[] temperatures) {\n    // 待实现\n}', explanation: '返回每天需要等待的天数' },
-      { title: '单调栈', description: '维护递减栈', code: 'public int[] dailyTemperatures(int[] temperatures) {\n    int n = temperatures.length;\n    int[] result = new int[n];\n    Stack<Integer> stack = new Stack<>();\n    \n    for (int i = 0; i < n; i++) {\n        while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {\n            int idx = stack.pop();\n            result[idx] = i - idx;\n        }\n        stack.push(i);\n    }\n    return result;\n}', explanation: '栈里存下标，遇到更高温度时计算天数差' }
+      { title: '第1步：初始化', description: '结果数组和栈', code: 'public int[] dailyTemperatures(int[] temperatures) {\n    int n = temperatures.length;\n    int[] result = new int[n];  // 默认都是0\n    Stack<Integer> stack = new Stack<>();  // 存下标\n}', explanation: 'result默认是0，表示没找到更高温度。' },
+      { title: '第2步：遍历并维护单调栈', description: '遇到更高温度时弹出', code: 'for (int i = 0; i < n; i++) {\n    while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {\n        int idx = stack.pop();\n        result[idx] = i - idx;  // 等待天数\n    }\n    stack.push(i);\n}', explanation: '🔑 关键逻辑：\n• 当前温度 > 栈顶温度：栈顶找到答案了！\n• 弹出并记录天数差\n• 当前下标入栈，等待查找' },
+      { title: '第3步：完整代码', description: '汇总', code: 'public int[] dailyTemperatures(int[] temperatures) {\n    int n = temperatures.length;\n    int[] result = new int[n];\n    Stack<Integer> stack = new Stack<>();\n    \n    for (int i = 0; i < n; i++) {\n        while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {\n            int idx = stack.pop();\n            result[idx] = i - idx;\n        }\n        stack.push(i);\n    }\n    return result;\n}', explanation: '📊 复杂度：时间O(n)，每个元素最多入栈出栈各1次；空间O(n)。' }
     ],
     interview: {
-      approach: '单调递减栈。栈里存下标，遇到更高温度时弹出所有比它低的，计算天数差。',
-      timeComplexity: 'O(n)，每个元素最多入栈出栈各一次',
+      approach: '【面试回答模板】\\n\\n用单调递减栈。栈里存下标，遇到更高温度时弹出所有比它低的，计算天数差。\\n\\n时间O(n)，空间O(n)。',
+      timeComplexity: 'O(n)，每个元素最多入栈出栈各1次',
       spaceComplexity: 'O(n)',
       followUp: [
         { question: '为什么用递减栈？', answer: '因为要找下一个更大的元素，递减栈保证栈顶是最近的未找到答案的元素。' }
@@ -1450,20 +1499,23 @@ export const problems: Problem[] = [
       { input: 'heights = [2,4]', output: '4' }
     ],
     thinkingGuide: [
-      { step: 1, question: '如何计算以某个柱子为高的矩形面积？', hint: '向两边扩展', answer: '找到左边第一个比它矮的和右边第一个比它矮的，宽度就是它们之间的距离。' },
-      { step: 2, question: '如何高效找左右边界？', hint: '单调栈', answer: '用单调递增栈，栈里存下标。弹出时，栈顶就是左边界，当前元素就是右边界。' }
+      { step: 1, question: '🎯 题目要求什么？', hint: '最大矩形面积', answer: '在柱状图中找能勾勒出来的最大矩形面积。每个柱子宽度为1，高度由数组给出。' },
+      { step: 2, question: '🤔 如何计算以某个柱子为高的矩形面积？', hint: '向两边扩展', answer: '找左边第一个比它矮的和右边第一个比它矮的，宽度 = 右边界 - 左边界 - 1。' },
+      { step: 3, question: '💡 如何高效找左右边界？', hint: '单调栈', answer: '用单调递增栈，栈里存下标。弹出时，栈顶就是左边界，当前元素就是右边界。' },
+      { step: 4, question: '❓ 为什么末尾要加0？', hint: '确保所有柱子都被处理', answer: '如果数组本身是递增的，柱子不会被弹出。末尾加0确保所有柱子最终都会被弹出计算。' }
     ],
     codeSteps: [
-      { title: '定义方法签名', description: '输入高度数组，输出最大面积', code: 'public int largestRectangleArea(int[] heights) {\n    // 待实现\n}', explanation: '返回最大矩形面积' },
-      { title: '单调栈', description: '维护递增栈', code: 'public int largestRectangleArea(int[] heights) {\n    int n = heights.length;\n    Stack<Integer> stack = new Stack<>();\n    int maxArea = 0;\n    \n    for (int i = 0; i <= n; i++) {\n        int h = (i == n) ? 0 : heights[i];\n        while (!stack.isEmpty() && h < heights[stack.peek()]) {\n            int height = heights[stack.pop()];\n            int width = stack.isEmpty() ? i : i - stack.peek() - 1;\n            maxArea = Math.max(maxArea, height * width);\n        }\n        stack.push(i);\n    }\n    return maxArea;\n}', explanation: '末尾加0确保所有柱子都被处理' }
+      { title: '第1步：初始化', description: '栈和结果', code: 'public int largestRectangleArea(int[] heights) {\n    int n = heights.length;\n    Stack<Integer> stack = new Stack<>();\n    int maxArea = 0;\n}', explanation: '栈存下标，maxArea记录最大面积。' },
+      { title: '第2步：遍历并维护单调栈', description: '遍历到n（末尾加0）', code: 'for (int i = 0; i <= n; i++) {\n    int h = (i == n) ? 0 : heights[i];  // 末尾加0\n    while (!stack.isEmpty() && h < heights[stack.peek()]) {\n        int height = heights[stack.pop()];\n        int width = stack.isEmpty() ? i : i - stack.peek() - 1;\n        maxArea = Math.max(maxArea, height * width);\n    }\n    stack.push(i);\n}', explanation: '🔑 关键逻辑：\n• 遇到更矮的柱子时，弹出并计算面积\n• 宽度 = 右边界(i) - 左边界(栈顶) - 1' },
+      { title: '第3步：完整代码', description: '汇总', code: 'public int largestRectangleArea(int[] heights) {\n    int n = heights.length;\n    Stack<Integer> stack = new Stack<>();\n    int maxArea = 0;\n    \n    for (int i = 0; i <= n; i++) {\n        int h = (i == n) ? 0 : heights[i];\n        while (!stack.isEmpty() && h < heights[stack.peek()]) {\n            int height = heights[stack.pop()];\n            int width = stack.isEmpty() ? i : i - stack.peek() - 1;\n            maxArea = Math.max(maxArea, height * width);\n        }\n        stack.push(i);\n    }\n    return maxArea;\n}', explanation: '📊 复杂度：时间O(n)，空间O(n)。' }
     ],
     interview: {
-      approach: '单调递增栈。弹出时计算以该柱子为高的矩形面积：高度是柱子高度，宽度是左右边界之间的距离。',
+      approach: '【面试回答模板】\\n\\n用单调递增栈。弹出时计算以该柱子为高的矩形面积：高度是柱子高度，宽度是左右边界之间的距离。\\n\\n时间O(n)，空间O(n)。',
       timeComplexity: 'O(n)',
       spaceComplexity: 'O(n)',
       followUp: [
         { question: '为什么末尾加0？', answer: '确保所有柱子都被弹出处理。' },
-        { question: '这道题和接雨水有什么关系？', answer: '接雨水可以用类似的单调栈方法，按层计算。' }
+        { question: '这道题和接雨水有什么关系？', answer: '都可以用单调栈。接雨水是找左右边界的较小值，按层计算。' }
       ]
     }
   },
@@ -1480,20 +1532,23 @@ export const problems: Problem[] = [
       { input: 'nums = [3,2,3,1,2,4,5,5,6], k = 4', output: '4' }
     ],
     thinkingGuide: [
-      { step: 1, question: '最直接的方法？', hint: '排序', answer: '排序后取第k大，时间O(nlogn)。' },
-      { step: 2, question: '如何优化？', hint: '不需要完全排序', answer: '用小顶堆维护k个最大元素，堆顶就是第k大。或者用快速选择算法。' }
+      { step: 1, question: '🎯 题目要求什么？', hint: '第k大', answer: '找数组中第k个最大的元素。注意是排序后第k大，不是第k个不同的元素。' },
+      { step: 2, question: '🤔 最简单的方法？', hint: '排序', answer: '排序后取第k大，时间O(nlogn)。但其实不需要完全排序。' },
+      { step: 3, question: '💡 如何用堆优化？', hint: '维护k个最大', answer: '用小顶堆维护k个最大元素。堆大小超过k就弹出最小的，最终堆顶就是第k大。' },
+      { step: 4, question: '❓ 为什么用小顶堆？', hint: '堆顶是最小', answer: '小顶堆维护k个最大元素，堆顶是其中最小的，即第k大。如果用大顶堆，需要维护n-k+1个元素。' }
     ],
     codeSteps: [
-      { title: '定义方法签名', description: '输入数组和k，输出第k大元素', code: 'public int findKthLargest(int[] nums, int k) {\n    // 待实现\n}', explanation: '返回第k大的元素' },
-      { title: '使用小顶堆', description: '维护k个最大元素', code: 'public int findKthLargest(int[] nums, int k) {\n    PriorityQueue<Integer> heap = new PriorityQueue<>();\n    for (int num : nums) {\n        heap.offer(num);\n        if (heap.size() > k) {\n            heap.poll();\n        }\n    }\n    return heap.peek();\n}', explanation: '小顶堆大小为k，堆顶是第k大' }
+      { title: '第1步：创建小顶堆', description: 'Java默认就是小顶堆', code: 'public int findKthLargest(int[] nums, int k) {\n    PriorityQueue<Integer> heap = new PriorityQueue<>();\n}', explanation: 'PriorityQueue默认是小顶堆，堆顶是最小值。' },
+      { title: '第2步：遍历并维护堆大小', description: '超过k就弹出', code: 'for (int num : nums) {\n    heap.offer(num);\n    if (heap.size() > k) {\n        heap.poll();  // 弹出最小的\n    }\n}', explanation: '🔑 关键：堆始终保持k个元素，是当前见过的k个最大的。' },
+      { title: '第3步：完整代码', description: '返回堆顶', code: 'public int findKthLargest(int[] nums, int k) {\n    PriorityQueue<Integer> heap = new PriorityQueue<>();\n    for (int num : nums) {\n        heap.offer(num);\n        if (heap.size() > k) {\n            heap.poll();\n        }\n    }\n    return heap.peek();  // 堆顶就是第k大\n}', explanation: '📊 复杂度：时间O(nlogk)，空间O(k)。' }
     ],
     interview: {
-      approach: '用小顶堆维护k个最大元素。遍历数组，堆大小超过k就弹出最小的。最后堆顶就是第k大。',
+      approach: '【面试回答模板】\\n\\n用小顶堆维护k个最大元素。遍历数组，堆大小超过k就弹出最小的。最后堆顶就是第k大。\\n\\n时间O(nlogk)，空间O(k)。',
       timeComplexity: 'O(nlogk)',
       spaceComplexity: 'O(k)',
       followUp: [
         { question: '还有什么方法？', answer: '快速选择算法，平均O(n)，最坏O(n²)。' },
-        { question: '为什么用小顶堆而不是大顶堆？', answer: '小顶堆维护k个最大元素，堆顶是其中最小的，即第k大。大顶堆需要维护n-k+1个元素。' }
+        { question: '为什么用小顶堆而不是大顶堆？', answer: '小顶堆维护k个最大，堆顶是其中最小的，即第k大。大顶堆需要维护n-k+1个元素。' }
       ]
     }
   },
@@ -1509,15 +1564,18 @@ export const problems: Problem[] = [
       { input: 'nums = [1], k = 1', output: '[1]' }
     ],
     thinkingGuide: [
-      { step: 1, question: '第一步做什么？', hint: '统计频率', answer: '用HashMap统计每个元素的出现次数。' },
-      { step: 2, question: '如何找前k高频？', hint: '堆', answer: '用小顶堆（按频率排序）维护k个元素，堆顶是频率最低的。' }
+      { step: 1, question: '🎯 题目要求什么？', hint: '频率最高的k个', answer: '找出数组中出现频率最高的k个元素，順序不限。' },
+      { step: 2, question: '🤔 第一步做什么？', hint: '统计频率', answer: '用HashMap统计每个元素的出现次数。' },
+      { step: 3, question: '📝 如何找前k高频？', hint: '堆', answer: '用小顶堆（按频率排序）维护k个元素。堆顶是频率最低的，超过k就弹出。' },
+      { step: 4, question: '💡 还有什么方法？', hint: '桶排序', answer: '可以用桶排序：按频率分桶，从高频桶开始取k个，时间O(n)。' }
     ],
     codeSteps: [
-      { title: '统计频率', description: '用HashMap统计', code: 'public int[] topKFrequent(int[] nums, int k) {\n    Map<Integer, Integer> count = new HashMap<>();\n    for (int num : nums) {\n        count.put(num, count.getOrDefault(num, 0) + 1);\n    }\n}', explanation: '统计每个元素出现次数' },
-      { title: '使用小顶堆', description: '按频率排序的堆', code: 'public int[] topKFrequent(int[] nums, int k) {\n    Map<Integer, Integer> count = new HashMap<>();\n    for (int num : nums) {\n        count.put(num, count.getOrDefault(num, 0) + 1);\n    }\n    \n    PriorityQueue<Integer> heap = new PriorityQueue<>((a, b) -> count.get(a) - count.get(b));\n    for (int num : count.keySet()) {\n        heap.offer(num);\n        if (heap.size() > k) {\n            heap.poll();\n        }\n    }\n    \n    int[] result = new int[k];\n    for (int i = 0; i < k; i++) {\n        result[i] = heap.poll();\n    }\n    return result;\n}', explanation: '小顶堆按频率排序，维护k个高频元素' }
+      { title: '第1步：统计频率', description: '用HashMap', code: 'public int[] topKFrequent(int[] nums, int k) {\n    Map<Integer, Integer> count = new HashMap<>();\n    for (int num : nums) {\n        count.put(num, count.getOrDefault(num, 0) + 1);\n    }\n}', explanation: 'count存储每个元素的出现次数。' },
+      { title: '第2步：用小顶堆找k个高频', description: '按频率排序的堆', code: 'PriorityQueue<Integer> heap = new PriorityQueue<>((a, b) -> count.get(a) - count.get(b));\nfor (int num : count.keySet()) {\n    heap.offer(num);\n    if (heap.size() > k) {\n        heap.poll();  // 弹出频率最低的\n    }\n}', explanation: '🔑 关键：堆按频率排序，不是按元素值。' },
+      { title: '第3步：完整代码', description: '汇总', code: 'public int[] topKFrequent(int[] nums, int k) {\n    Map<Integer, Integer> count = new HashMap<>();\n    for (int num : nums) {\n        count.put(num, count.getOrDefault(num, 0) + 1);\n    }\n    \n    PriorityQueue<Integer> heap = new PriorityQueue<>((a, b) -> count.get(a) - count.get(b));\n    for (int num : count.keySet()) {\n        heap.offer(num);\n        if (heap.size() > k) heap.poll();\n    }\n    \n    int[] result = new int[k];\n    for (int i = 0; i < k; i++) result[i] = heap.poll();\n    return result;\n}', explanation: '📊 复杂度：时间O(nlogk)，空间O(n)。' }
     ],
     interview: {
-      approach: '先用HashMap统计频率，再用小顶堆（按频率排序）维护k个高频元素。',
+      approach: '【面试回答模板】\\n\\n先用HashMap统计频率，再用小顶堆（按频率排序）维护k个高频元素。\\n\\n时间O(nlogk)，空间O(n)。',
       timeComplexity: 'O(nlogk)',
       spaceComplexity: 'O(n)',
       followUp: [
@@ -1536,16 +1594,18 @@ export const problems: Problem[] = [
       { input: '["MedianFinder", "addNum", "addNum", "findMedian", "addNum", "findMedian"]\n[[], [1], [2], [], [3], []]', output: '[null, null, null, 1.5, null, 2.0]' }
     ],
     thinkingGuide: [
-      { step: 1, question: '如何快速获取中位数？', hint: '分成两半', answer: '把数据分成两半，左半边用大顶堆（存较小的一半），右半边用小顶堆（存较大的一半）。' },
-      { step: 2, question: '如何维护平衡？', hint: '大小差不超过1', answer: '保持两个堆大小差不超过1，中位数就是堆顶元素。' }
+      { step: 1, question: '🎯 题目要求什么？', hint: '动态中位数', answer: '设计一个数据结构，支持动态添加元素，并能随时返回已添加元素的中位数。' },
+      { step: 2, question: '🤔 维护有序数组可以吗？', hint: '插入代价', answer: '有序数组插入是O(n)，中位数是O(1)。我们想要更快的插入。' },
+      { step: 3, question: '💡 如何用两个堆？', hint: '分成两半', answer: '用大顶堆存较小的一半，小顶堆存较大的一半。保持两堆大小差不超过1，中位数就是堆顶元素。' },
+      { step: 4, question: '📝 如何保持平衡？', hint: 'addNum时调整', answer: '每次addNum：先加入大顶堆，把大顶堆最大的给小顶堆，然后如果小顶堆过大就还给大顶堆。' }
     ],
     codeSteps: [
-      { title: '定义数据结构', description: '两个堆', code: 'class MedianFinder {\n    private PriorityQueue<Integer> maxHeap;  // 左半边，大顶堆\n    private PriorityQueue<Integer> minHeap;  // 右半边，小顶堆\n    \n    public MedianFinder() {\n        maxHeap = new PriorityQueue<>((a, b) -> b - a);\n        minHeap = new PriorityQueue<>();\n    }\n}', explanation: '大顶堆存较小的一半，小顶堆存较大的一半' },
-      { title: '实现addNum', description: '添加并平衡', code: 'public void addNum(int num) {\n    maxHeap.offer(num);\n    minHeap.offer(maxHeap.poll());\n    if (minHeap.size() > maxHeap.size()) {\n        maxHeap.offer(minHeap.poll());\n    }\n}', explanation: '先加入大顶堆，再平衡到小顶堆，最后调整大小' },
-      { title: '实现findMedian', description: '返回中位数', code: 'public double findMedian() {\n    if (maxHeap.size() > minHeap.size()) {\n        return maxHeap.peek();\n    } else {\n        return (maxHeap.peek() + minHeap.peek()) / 2.0;\n    }\n}', explanation: '奇数个返回大顶堆顶，偶数个返回两堆顶平均' }
+      { title: '第1步：定义两个堆', description: '大顶堆+小顶堆', code: 'class MedianFinder {\n    private PriorityQueue<Integer> maxHeap;  // 左半边，大顶堆\n    private PriorityQueue<Integer> minHeap;  // 右半边，小顶堆\n    \n    public MedianFinder() {\n        maxHeap = new PriorityQueue<>((a, b) -> b - a);\n        minHeap = new PriorityQueue<>();\n    }\n}', explanation: 'maxHeap存较小的一半，minHeap存较大的一半。' },
+      { title: '第2步：实现addNum', description: '添加并保持平衡', code: 'public void addNum(int num) {\n    maxHeap.offer(num);\n    minHeap.offer(maxHeap.poll());  // 把最大的给小顶堆\n    if (minHeap.size() > maxHeap.size()) {\n        maxHeap.offer(minHeap.poll());  // 平衡大小\n    }\n}', explanation: '🔑 关键逻辑：确保omaxHeap的最大值 <= minHeap的最小值，且大小差不超过1。' },
+      { title: '第3步：实现findMedian', description: '返回中位数', code: 'public double findMedian() {\n    if (maxHeap.size() > minHeap.size()) {\n        return maxHeap.peek();\n    } else {\n        return (maxHeap.peek() + minHeap.peek()) / 2.0;\n    }\n}', explanation: '奇数个返回大顶堆顶，偶数个返回两堆顶平均。' }
     ],
     interview: {
-      approach: '用两个堆：大顶堆存较小的一半，小顶堆存较大的一半。保持大小差不超过1，中位数就是堆顶。',
+      approach: '【面试回答模板】\\n\\n用两个堆：大顶堆存较小的一半，小顶堆存较大的一半。保持大小差不超过1，中位数就是堆顶。\\n\\naddNum: O(logn), findMedian: O(1)。',
       timeComplexity: 'addNum: O(logn), findMedian: O(1)',
       spaceComplexity: 'O(n)',
       followUp: [
@@ -1566,19 +1626,22 @@ export const problems: Problem[] = [
       { input: 'prices = [7,6,4,3,1]', output: '0', explanation: '没有交易完成，最大利润为 0' }
     ],
     thinkingGuide: [
-      { step: 1, question: '暴力解法是什么？', hint: '枚举买卖日', answer: '两层循环枚举买入日和卖出日，计算最大利润。时间O(n²)。' },
-      { step: 2, question: '如何优化？', hint: '一次遍历', answer: '遍历时记录到目前为止的最低价格，计算当天卖出的利润。' }
+      { step: 1, question: '🎯 题目要求什么？', hint: '买卖一次', answer: '只能进行一次买卖，找最大利润。要在低点买入，高点卖出，且卖出必须在买入之后。' },
+      { step: 2, question: '🤔 暴力解法？', hint: '枚举买卖日', answer: '两层循环枚举买入日和卖出日，计算最大利润。时间O(n²)，可以优化。' },
+      { step: 3, question: '💡 如何优化到O(n)？', hint: '一次遍历', answer: '遍历时记录到目前为止的最低价格，计算当天卖出的利润，取最大值。' },
+      { step: 4, question: '📝 为什么这样是正确的？', hint: '贪心思想', answer: '对于每一天，如果要卖出，一定在之前最低点买入才能获得最大利润。' }
     ],
     codeSteps: [
-      { title: '定义方法签名', description: '输入价格数组，输出最大利润', code: 'public int maxProfit(int[] prices) {\n    // 待实现\n}', explanation: '返回最大利润' },
-      { title: '一次遍历', description: '记录最低价并计算利润', code: 'public int maxProfit(int[] prices) {\n    int minPrice = Integer.MAX_VALUE;\n    int maxProfit = 0;\n    for (int price : prices) {\n        minPrice = Math.min(minPrice, price);\n        maxProfit = Math.max(maxProfit, price - minPrice);\n    }\n    return maxProfit;\n}', explanation: '每天更新最低价和最大利润' }
+      { title: '第1步：初始化变量', description: '最低价和最大利润', code: 'public int maxProfit(int[] prices) {\n    int minPrice = Integer.MAX_VALUE;\n    int maxProfit = 0;\n}', explanation: 'minPrice记录到目前为止的最低价，maxProfit记录最大利润。' },
+      { title: '第2步：遍历更新', description: '贪心计算', code: 'for (int price : prices) {\n    minPrice = Math.min(minPrice, price);\n    maxProfit = Math.max(maxProfit, price - minPrice);\n}', explanation: '🔑 每天都更新最低价和最大利润。' },
+      { title: '第3步：完整代码', description: '汇总', code: 'public int maxProfit(int[] prices) {\n    int minPrice = Integer.MAX_VALUE;\n    int maxProfit = 0;\n    for (int price : prices) {\n        minPrice = Math.min(minPrice, price);\n        maxProfit = Math.max(maxProfit, price - minPrice);\n    }\n    return maxProfit;\n}', explanation: '📊 复杂度：时间O(n)，空间O(1)。' }
     ],
     interview: {
-      approach: '贪心。遍历时维护到目前为止的最低价格，计算当天卖出的利润，取最大值。',
+      approach: '【面试回答模板】\\n\\n贪心算法。遍历时维护到目前为止的最低价格，计算当天卖出的利润，取最大值。\\n\\n时间O(n)，空间O(1)。',
       timeComplexity: 'O(n)',
       spaceComplexity: 'O(1)',
       followUp: [
-        { question: '如果可以多次交易？', answer: '累加所有上涨的差价。' },
+        { question: '如果可以多次交易？', answer: '累加所有上涨的差价，只要今天比昨天贵就卖。' },
         { question: '如果最多交易k次？', answer: '用动态规划，dp[i][j]表示第i天完成j次交易的最大利润。' }
       ]
     }
@@ -1595,19 +1658,22 @@ export const problems: Problem[] = [
       { input: 'nums = [3,2,1,0,4]', output: 'false', explanation: '无论怎样，总会到达下标为 3 的位置。但该下标的最大跳跃长度是 0' }
     ],
     thinkingGuide: [
-      { step: 1, question: '核心问题是什么？', hint: '能到达的最远位置', answer: '维护能到达的最远位置，如果最远位置 >= 最后一个下标，就能到达。' },
-      { step: 2, question: '如何更新最远位置？', hint: '贪心', answer: '遍历每个位置，更新最远位置 = max(最远位置, 当前位置 + 跳跃长度)。' }
+      { step: 1, question: '🎯 题目要求什么？', hint: '能否到达结尾', answer: '从下标0出发，nums[i]表示最多能跳i步，判断能否到达最后一个下标。' },
+      { step: 2, question: '🤔 核心思想是什么？', hint: '最远可达', answer: '维护能到达的最远位置maxReach，如果maxReach >= 最后一个下标，就能到达。' },
+      { step: 3, question: '📝 如何更新最远位置？', hint: '贪心', answer: '遍历每个位置，maxReach = max(maxReach, i + nums[i])。每个位置都尽可能跳得远。' },
+      { step: 4, question: '⚠️ 什么时候无法到达？', hint: '当前位置超过maxReach', answer: '如果当前位置i > maxReach，说明根本走不到这个位置，返回false。' }
     ],
     codeSteps: [
-      { title: '定义方法签名', description: '输入数组，输出是否能到达', code: 'public boolean canJump(int[] nums) {\n    // 待实现\n}', explanation: '返回true或false' },
-      { title: '贪心遍历', description: '维护最远可达位置', code: 'public boolean canJump(int[] nums) {\n    int maxReach = 0;\n    for (int i = 0; i < nums.length; i++) {\n        if (i > maxReach) return false;\n        maxReach = Math.max(maxReach, i + nums[i]);\n    }\n    return true;\n}', explanation: '如果当前位置超过最远可达，说明到不了' }
+      { title: '第1步：初始化最远可达', description: '从0开始', code: 'public boolean canJump(int[] nums) {\n    int maxReach = 0;\n}', explanation: '初始时最远只能到达位置0。' },
+      { title: '第2步：遍历更新', description: '贪心更新最远位置', code: 'for (int i = 0; i < nums.length; i++) {\n    if (i > maxReach) return false;  // 到不了这\n    maxReach = Math.max(maxReach, i + nums[i]);\n}', explanation: '🔑 关键：如果i > maxReach，说明这个位置走不到。' },
+      { title: '第3步：完整代码', description: '汇总', code: 'public boolean canJump(int[] nums) {\n    int maxReach = 0;\n    for (int i = 0; i < nums.length; i++) {\n        if (i > maxReach) return false;\n        maxReach = Math.max(maxReach, i + nums[i]);\n    }\n    return true;\n}', explanation: '📊 复杂度：时间O(n)，空间O(1)。' }
     ],
     interview: {
-      approach: '贪心。维护能到达的最远位置，遍历更新。如果某个位置超过最远可达位置，返回false。',
+      approach: '【面试回答模板】\\n\\n贪心算法。维护能到达的最远位置，遍历更新。如果某个位置超过最远可达，返回false。\\n\\n时间O(n)，空间O(1)。',
       timeComplexity: 'O(n)',
       spaceComplexity: 'O(1)',
       followUp: [
-        { question: '如果要求最少跳跃次数？', answer: '贪心，每次跳到能使下一步跳得最远的位置。' }
+        { question: '如果要求最少跳跃次数？', answer: '贪心，每次跳到能使下一步跳得最远的位置。见跳跃游戏II。' }
       ]
     }
   },
@@ -1623,15 +1689,18 @@ export const problems: Problem[] = [
       { input: 'nums = [2,3,0,1,4]', output: '2' }
     ],
     thinkingGuide: [
-      { step: 1, question: '如何贪心？', hint: '每一跳的范围', answer: '在当前跳跃范围内，找到能跳得最远的位置作为下一跳的起点。' },
-      { step: 2, question: '什么时候增加跳跃次数？', hint: '到达边界时', answer: '当到达当前跳跃的边界时，必须跳一次，更新边界为最远可达位置。' }
+      { step: 1, question: '🎯 题目要求什么？', hint: '最少跳跃次数', answer: '和跳跃游戏I类似，但这次要求最少跳跃次数到达结尾。保证能到达。' },
+      { step: 2, question: '🤔 如何贪心？', hint: '每次跳远一点', answer: '在当前跳跃范围内，找到能跳得最远的位置作为下一跳的起点。' },
+      { step: 3, question: '📝 什么时候增加跳跃次数？', hint: '到达边界时', answer: '当遍历到当前跳跃的边界时，必须跳一次，更新边界为最远可达位置。' },
+      { step: 4, question: '⚠️ 为什么遍历到n-1？', hint: '最后一个位置', answer: '到达最后一个位置时不需要再跳，避免多算一次。' }
     ],
     codeSteps: [
-      { title: '定义方法签名', description: '输入数组，输出最少跳跃次数', code: 'public int jump(int[] nums) {\n    // 待实现\n}', explanation: '返回最少跳跃次数' },
-      { title: '贪心遍历', description: '维护边界和最远可达', code: 'public int jump(int[] nums) {\n    int jumps = 0;\n    int end = 0;      // 当前跳跃的边界\n    int farthest = 0; // 最远可达位置\n    \n    for (int i = 0; i < nums.length - 1; i++) {\n        farthest = Math.max(farthest, i + nums[i]);\n        if (i == end) {\n            jumps++;\n            end = farthest;\n        }\n    }\n    return jumps;\n}', explanation: '到达边界时跳一次，更新边界' }
+      { title: '第1步：初始化变量', description: '跳跃次数、边界、最远', code: 'public int jump(int[] nums) {\n    int jumps = 0;\n    int end = 0;       // 当前跳跃的边界\n    int farthest = 0;  // 最远可达位置\n}', explanation: 'end是当前跳跃能到达的边界，farthest是当前范围内能到达的最远位置。' },
+      { title: '第2步：遍历更新', description: '到达边界时跳跃', code: 'for (int i = 0; i < nums.length - 1; i++) {\n    farthest = Math.max(farthest, i + nums[i]);\n    if (i == end) {  // 到达当前边界\n        jumps++;\n        end = farthest;  // 更新边界\n    }\n}', explanation: '🔑 关键：到达边界时必须跳一次，更新边界为最远可达。' },
+      { title: '第3步：完整代码', description: '汇总', code: 'public int jump(int[] nums) {\n    int jumps = 0, end = 0, farthest = 0;\n    \n    for (int i = 0; i < nums.length - 1; i++) {\n        farthest = Math.max(farthest, i + nums[i]);\n        if (i == end) {\n            jumps++;\n            end = farthest;\n        }\n    }\n    return jumps;\n}', explanation: '📊 复杂度：时间O(n)，空间O(1)。' }
     ],
     interview: {
-      approach: '贪心。维护当前跳跃的边界和最远可达位置。到达边界时必须跳一次，更新边界为最远可达。',
+      approach: '【面试回答模板】\\n\\n贪心算法。维护当前跳跃的边界和最远可达位置。到达边界时必须跳一次，更新边界为最远可达。\\n\\n时间O(n)，空间O(1)。',
       timeComplexity: 'O(n)',
       spaceComplexity: 'O(1)',
       followUp: [
@@ -1651,19 +1720,22 @@ export const problems: Problem[] = [
       { input: 's = "eccbbbbdec"', output: '[10]' }
     ],
     thinkingGuide: [
-      { step: 1, question: '如何确定片段边界？', hint: '每个字母的最后出现位置', answer: '片段必须包含某个字母的所有出现，所以边界至少要到该字母最后出现的位置。' },
-      { step: 2, question: '如何贪心？', hint: '不断扩展边界', answer: '遍历时不断更新当前片段的边界为所有字母最后出现位置的最大值，到达边界时切分。' }
+      { step: 1, question: '🎯 题目要求什么？', hint: '划分字符串', answer: '把字符串划分成尽可能多的片段，保证同一字母只出现在一个片段中。比如"ababcbaca"里a、b、c都只在这一段。' },
+      { step: 2, question: '🤔 如何确定片段边界？', hint: '每个字母的范围', answer: '片段必须包含某个字母的所有出现，所以边界至少要到该字母最后出现的位置。' },
+      { step: 3, question: '📝 具体怎么做？', hint: '预处理+贪心', answer: '先记录每个字母最后出现的位置，然后遍历时不断扩展边界为当前遇到字母的最后位置的最大值。' },
+      { step: 4, question: '💡 什么时候切分？', hint: '到达边界时', answer: '当遍历位置等于当前边界时，说明这个片段内的所有字母都不会再出现，可以切分。' }
     ],
     codeSteps: [
-      { title: '记录最后出现位置', description: '预处理每个字母的最后位置', code: 'public List<Integer> partitionLabels(String s) {\n    int[] last = new int[26];\n    for (int i = 0; i < s.length(); i++) {\n        last[s.charAt(i) - \'a\'] = i;\n    }\n}', explanation: 'last[c]记录字母c最后出现的位置' },
-      { title: '贪心划分', description: '遍历并切分', code: 'public List<Integer> partitionLabels(String s) {\n    int[] last = new int[26];\n    for (int i = 0; i < s.length(); i++) {\n        last[s.charAt(i) - \'a\'] = i;\n    }\n    \n    List<Integer> result = new ArrayList<>();\n    int start = 0, end = 0;\n    for (int i = 0; i < s.length(); i++) {\n        end = Math.max(end, last[s.charAt(i) - \'a\']);\n        if (i == end) {\n            result.add(end - start + 1);\n            start = end + 1;\n        }\n    }\n    return result;\n}', explanation: '不断扩展边界，到达边界时切分' }
+      { title: '第1步：记录每个字母最后出现位置', description: '预处理', code: 'public List<Integer> partitionLabels(String s) {\n    int[] last = new int[26];\n    for (int i = 0; i < s.length(); i++) {\n        last[s.charAt(i) - \'a\'] = i;\n    }\n}', explanation: 'last[c]存储字母c最后出现的下标。' },
+      { title: '第2步：遍历并贪心划分', description: '扩展边界，到达时切分', code: 'List<Integer> result = new ArrayList<>();\nint start = 0, end = 0;\n\nfor (int i = 0; i < s.length(); i++) {\n    end = Math.max(end, last[s.charAt(i) - \'a\']);\n    if (i == end) {  // 到达当前片段边界\n        result.add(end - start + 1);\n        start = end + 1;\n    }\n}', explanation: '🔑 关键：每遇到一个字母，就把边界扩展到它最后出现的位置。到达边界时切分。' },
+      { title: '第3步：完整代码', description: '汇总', code: 'public List<Integer> partitionLabels(String s) {\n    int[] last = new int[26];\n    for (int i = 0; i < s.length(); i++) {\n        last[s.charAt(i) - \'a\'] = i;\n    }\n    \n    List<Integer> result = new ArrayList<>();\n    int start = 0, end = 0;\n    for (int i = 0; i < s.length(); i++) {\n        end = Math.max(end, last[s.charAt(i) - \'a\']);\n        if (i == end) {\n            result.add(end - start + 1);\n            start = end + 1;\n        }\n    }\n    return result;\n}', explanation: '📊 复杂度：时间O(n)，空间O(1)（只用了26大小的数组）。' }
     ],
     interview: {
-      approach: '贪心。先记录每个字母最后出现的位置，然后遍历，不断扩展当前片段的边界，到达边界时切分。',
+      approach: '【面试回答模板】\\n\\n贪心算法。先记录每个字母最后出现的位置，然后遍历时不断扩展当前片段的边界，到达边界时切分。\\n\\n时间O(n)，空间O(1)。',
       timeComplexity: 'O(n)',
       spaceComplexity: 'O(1)，只用了26大小的数组',
       followUp: [
-        { question: '为什么这样划分是最优的？', answer: '每次到达边界就切分，保证了片段数最多。' }
+        { question: '为什么这样划分是最优的？', answer: '每次到达边界就切分，保证了片段数最多且满足条件。' }
       ]
     }
   }
@@ -1698,8 +1770,8 @@ export const categories: Category[] = [
   { id: 'linked-list', name: '链表', nameEn: 'Linked List', icon: '🔗', description: '指针操作/快慢指针', color: '#84cc16', gradient: 'from-lime-500/20 to-lime-600/10', problems: ['intersection-list', 'reverse-list', 'palindrome-list', 'linked-list-cycle', 'linked-list-cycle-ii', 'merge-two-lists', 'add-two-numbers', 'remove-nth-node', 'swap-pairs', 'reverse-k-group', 'copy-random-list', 'sort-list', 'merge-k-lists', 'lru-cache'] },
   { id: 'array', name: '普通数组', nameEn: 'Array', icon: '📋', description: '遍历/原地操作', color: '#0ea5e9', gradient: 'from-sky-500/20 to-sky-600/10', problems: ['max-subarray', 'merge-intervals', 'rotate-array', 'product-except-self', 'first-missing-positive'] },
   { id: 'matrix', name: '矩阵', nameEn: 'Matrix', icon: '⊞', description: '二维数组操作', color: '#d946ef', gradient: 'from-fuchsia-500/20 to-fuchsia-600/10', problems: ['set-matrix-zeroes', 'spiral-matrix', 'rotate-image', 'search-matrix-ii'] },
-  { id: 'sorting', name: '排序算法', nameEn: 'Sorting', icon: '↕', description: '冒泡/选择/快排/归并', color: '#f43f5e', gradient: 'from-rose-500/20 to-rose-600/10', problems: ['bubble-sort', 'selection-sort', 'insertion-sort', 'merge-sort', 'quick-sort', 'heap-sort', 'counting-sort', 'radix-sort', 'bucket-sort', 'shell-sort', 'tim-sort', 'sort-colors-algo'] },
-  { id: 'searching', name: '查找算法', nameEn: 'Searching', icon: '🔍', description: '线性/二分/哈希查找', color: '#0891b2', gradient: 'from-cyan-600/20 to-cyan-700/10', problems: ['linear-search', 'binary-search-basic', 'binary-search-first', 'binary-search-last', 'binary-search-rotated', 'binary-search-sqrt'] }
+  { id: 'sorting', name: '排序算法', nameEn: 'Sorting', icon: '↕', description: '冒泡/选择/快排/归并', color: '#f43f5e', gradient: 'from-rose-500/20 to-rose-600/10', problems: ['bubble-sort', 'selection-sort', 'insertion-sort', 'merge-sort', 'quick-sort', 'heap-sort', 'counting-sort', 'radix-sort', 'bucket-sort', 'shell-sort'] },
+  { id: 'searching', name: '查找算法', nameEn: 'Searching', icon: '🔍', description: '线性/二分/哈希查找', color: '#0891b2', gradient: 'from-cyan-600/20 to-cyan-700/10', problems: ['linear-search', 'binary-search-basic', 'binary-search-first', 'binary-search-last', 'binary-search-rotated', 'binary-search-sqrt', 'interpolation-search', 'fibonacci-search', 'bst-search', 'avl-search', 'rbtree-search', 'hash-search'] }
 ];
 
 // 辅助函数
