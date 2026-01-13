@@ -960,7 +960,24 @@ export const problems: Problem[] = [
       {
         title: '第3步：标记、递归、回溯',
         description: '核心搜索逻辑',
-        code: 'private boolean backtrack(char[][] board, String word, int i, int j, int index) {\\n    // ...前文省略...\\n    \\n    // 1. 标记已访问（暂存原字符）\\n    char temp = board[i][j];\\n    board[i][j] = \\\'#\\\';\\n    \\n    // 2. 递归搜索四个方向\\n    boolean found = backtrack(board, word, i + 1, j, index + 1) ||\\n                    backtrack(board, word, i - 1, j, index + 1) ||\\n                    backtrack(board, word, i, j + 1, index + 1) ||\\n                    backtrack(board, word, i, j - 1, index + 1);\\n    \\n    // 3. 回溯（恢复原字符）\\n    board[i][j] = temp;\\n    \\n    return found;\\n}',
+        code: `private boolean backtrack(char[][] board, String word, int i, int j, int index) {
+    // ...前文省略...
+    
+    // 1. 标记已访问（暂存原字符）
+    char temp = board[i][j];
+    board[i][j] = '#';
+    
+    // 2. 递归搜索四个方向
+    boolean found = backtrack(board, word, i + 1, j, index + 1) ||
+                    backtrack(board, word, i - 1, j, index + 1) ||
+                    backtrack(board, word, i, j + 1, index + 1) ||
+                    backtrack(board, word, i, j - 1, index + 1);
+    
+    // 3. 回溯（恢复原字符）
+    board[i][j] = temp;
+    
+    return found;
+}`,
         explanation: '💡 技巧：直接修改board[i][j]=\'#\'来标记已访问，省去了O(mn)的visited数组空间。\\n⚠️ 别忘了最后要把board[i][j]改回temp，否则会影响其他起点的搜索。'
       }
     ],
