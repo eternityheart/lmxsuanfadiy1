@@ -45,7 +45,7 @@ function CodeBlock({ code, fileName }: { code: string; fileName?: string }) {
         if (commentIndex > 0) {
           parts.push(processKeywords(remaining.substring(0, commentIndex), `${lineIndex}-${partIndex++}`));
         }
-        parts.push(<span key={`${lineIndex}-comment`} className="text-gray-500 italic">{commentMatch[1]}</span>);
+        parts.push(<span key={`${lineIndex}-comment`} className="text-rose-600/70 italic">{commentMatch[1]}</span>);
         remaining = '';
       } else {
         parts.push(processKeywords(remaining, `${lineIndex}-${partIndex++}`));
@@ -105,7 +105,7 @@ function CodeBlock({ code, fileName }: { code: string; fileName?: string }) {
               <div className="w-3 h-3 rounded-full bg-yellow-500" />
               <div className="w-3 h-3 rounded-full bg-green-500" />
             </div>
-            <span className="text-sm text-gray-400 ml-2">{fileName}</span>
+            <span className="text-sm text-rose-500/60 ml-2">{fileName}</span>
           </div>
           <button
             onClick={handleCopy}
@@ -114,14 +114,14 @@ function CodeBlock({ code, fileName }: { code: string; fileName?: string }) {
             {copied ? (
               <Check className="w-4 h-4 text-green-400" />
             ) : (
-              <Copy className="w-4 h-4 text-gray-400" />
+              <Copy className="w-4 h-4 text-rose-500/60" />
             )}
           </button>
         </div>
       )}
       <div className="flex">
         {/* Line numbers */}
-        <div className="py-4 px-3 bg-[#181825] text-gray-500 text-sm font-mono select-none border-r border-gray-700">
+        <div className="py-4 px-3 bg-[#181825] text-rose-600/70 text-sm font-mono select-none border-r border-gray-700">
           {code.split('\n').map((_, i) => (
             <div key={i} className="leading-relaxed text-right">{i + 1}</div>
           ))}
@@ -182,8 +182,8 @@ export default function ProblemDetail() {
     return (
       <Layout>
         <div className="min-h-screen flex items-center justify-center">
-          <div className="text-center bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
-            <p className="text-gray-600 mb-4">题目不存在</p>
+          <div className="text-center bg-gradient-to-br from-rose-50/80 via-cream-50/90 to-amber-50/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+            <p className="text-rose-700/80 mb-4">题目不存在</p>
             <Link href="/">
               <Button className="bg-amber-500 hover:bg-amber-600 text-white">返回首页</Button>
             </Link>
@@ -230,14 +230,14 @@ export default function ProblemDetail() {
                 )}>
                   {problem.difficulty === 'easy' ? '简单' : problem.difficulty === 'medium' ? '中等' : '困难'}
                 </span>
-                <span className="text-sm text-gray-400 flex items-center gap-1">
+                <span className="text-sm text-rose-500/60 flex items-center gap-1">
                   <span className="text-cyan-400">{category?.icon}</span>
                   {category?.name}
                 </span>
               </div>
               
               <div className="flex items-center gap-2">
-                <span className="text-sm text-gray-500">
+                <span className="text-sm text-rose-600/70">
                   {currentIndex + 1} / {categoryProblems.length}
                 </span>
                 <div className="flex items-center gap-1">
@@ -246,7 +246,7 @@ export default function ProblemDetail() {
                     size="sm"
                     disabled={!prevProblem}
                     onClick={() => prevProblem && setLocation(`/problem/${prevProblem.id}`)}
-                    className="text-gray-400 hover:text-white hover:bg-gray-700 disabled:opacity-50"
+                    className="text-rose-500/60 hover:text-white hover:bg-gray-700 disabled:opacity-50"
                   >
                     <ChevronLeft className="w-4 h-4" />
                     上一题
@@ -256,7 +256,7 @@ export default function ProblemDetail() {
                     size="sm"
                     disabled={!nextProblem}
                     onClick={() => nextProblem && setLocation(`/problem/${nextProblem.id}`)}
-                    className="text-gray-400 hover:text-white hover:bg-gray-700 disabled:opacity-50"
+                    className="text-rose-500/60 hover:text-white hover:bg-gray-700 disabled:opacity-50"
                   >
                     下一题
                     <ChevronRight className="w-4 h-4" />
@@ -292,15 +292,15 @@ export default function ProblemDetail() {
                       <div key={i} className="bg-[#181825] rounded-lg p-3 border border-gray-700">
                         <div className="space-y-2 text-sm">
                           <div>
-                            <span className="text-gray-500">输入：</span>
+                            <span className="text-rose-600/70">输入：</span>
                             <code className="text-cyan-400 ml-1 font-mono text-xs">{example.input}</code>
                           </div>
                           <div>
-                            <span className="text-gray-500">输出：</span>
+                            <span className="text-rose-600/70">输出：</span>
                             <code className="text-green-400 ml-1 font-mono text-xs">{example.output}</code>
                           </div>
                           {example.explanation && (
-                            <div className="text-gray-500 text-xs pt-1 border-t border-gray-700 mt-2">
+                            <div className="text-rose-600/70 text-xs pt-1 border-t border-gray-700 mt-2">
                               {example.explanation}
                             </div>
                           )}
@@ -319,12 +319,12 @@ export default function ProblemDetail() {
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-sm">
                       <span className="text-yellow-400">⚡</span>
-                      <span className="text-gray-500">时间：</span>
+                      <span className="text-rose-600/70">时间：</span>
                       <span className="text-gray-300">{problem.interview.timeComplexity}</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm">
                       <Database className="w-4 h-4 text-blue-400" />
-                      <span className="text-gray-500">空间：</span>
+                      <span className="text-rose-600/70">空间：</span>
                       <span className="text-gray-300">{problem.interview.spaceComplexity}</span>
                     </div>
                   </div>
@@ -345,7 +345,7 @@ export default function ProblemDetail() {
                         'flex-1 px-4 py-3 text-sm font-medium transition-colors relative',
                         activeTab === tab.id
                           ? 'text-cyan-400'
-                          : 'text-gray-500 hover:text-gray-300'
+                          : 'text-rose-600/70 hover:text-gray-300'
                       )}
                     >
                       <span className="flex items-center justify-center gap-2">
@@ -393,16 +393,16 @@ export default function ProblemDetail() {
                                   'w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium',
                                   expandedSteps.includes(guide.step)
                                     ? 'bg-cyan-500 text-white'
-                                    : 'bg-gray-700 text-gray-400'
+                                    : 'bg-gray-700 text-rose-500/60'
                                 )}>
                                   {guide.step}
                                 </span>
                                 <span className="font-medium text-left text-gray-200">{guide.question}</span>
                               </div>
                               {expandedSteps.includes(guide.step) ? (
-                                <ChevronUp className="w-4 h-4 text-gray-500" />
+                                <ChevronUp className="w-4 h-4 text-rose-600/70" />
                               ) : (
-                                <ChevronDown className="w-4 h-4 text-gray-500" />
+                                <ChevronDown className="w-4 h-4 text-rose-600/70" />
                               )}
                             </button>
                             
@@ -471,7 +471,7 @@ export default function ProblemDetail() {
                         <div className="flex gap-4">
                           {/* Left: Step List (25%) */}
                           <div className="w-[25%] flex-shrink-0">
-                            <h4 className="text-sm font-medium text-gray-500 mb-3">代码构建步骤</h4>
+                            <h4 className="text-sm font-medium text-rose-600/70 mb-3">代码构建步骤</h4>
                             <div className="space-y-1">
                               {problem.codeSteps.map((step, index) => (
                                 <button
@@ -481,14 +481,14 @@ export default function ProblemDetail() {
                                     'w-full text-left px-3 py-2 rounded-lg transition-all flex items-center gap-2',
                                     currentCodeStep === index
                                       ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/50'
-                                      : 'hover:bg-gray-800 text-gray-400 border border-transparent'
+                                      : 'hover:bg-gray-800 text-rose-500/60 border border-transparent'
                                   )}
                                 >
                                   <span className={cn(
                                     'w-5 h-5 rounded-full flex items-center justify-center text-xs font-medium flex-shrink-0',
                                     currentCodeStep === index
                                       ? 'bg-cyan-500 text-white'
-                                      : 'bg-gray-700 text-gray-400'
+                                      : 'bg-gray-700 text-rose-500/60'
                                   )}>
                                     {index + 1}
                                   </span>
@@ -505,7 +505,7 @@ export default function ProblemDetail() {
                               <h3 className="text-lg font-semibold mb-1 text-white">
                                 {problem.codeSteps[currentCodeStep].title}
                               </h3>
-                              <p className="text-sm text-gray-400">
+                              <p className="text-sm text-rose-500/60">
                                 {problem.codeSteps[currentCodeStep].description}
                               </p>
                             </div>
@@ -536,12 +536,12 @@ export default function ProblemDetail() {
                                 size="sm"
                                 disabled={currentCodeStep === 0}
                                 onClick={() => setCurrentCodeStep(prev => prev - 1)}
-                                className="border-gray-600 text-gray-400 hover:bg-gray-800 disabled:opacity-50 bg-transparent"
+                                className="border-gray-600 text-rose-500/60 hover:bg-gray-800 disabled:opacity-50 bg-transparent"
                               >
                                 <ChevronLeft className="w-4 h-4 mr-1" />
                                 上一步
                               </Button>
-                              <span className="text-sm text-gray-500">
+                              <span className="text-sm text-rose-600/70">
                                 {currentCodeStep + 1} / {problem.codeSteps.length}
                               </span>
                               <Button
@@ -549,7 +549,7 @@ export default function ProblemDetail() {
                                 size="sm"
                                 disabled={currentCodeStep === problem.codeSteps.length - 1}
                                 onClick={() => setCurrentCodeStep(prev => prev + 1)}
-                                className="border-gray-600 text-gray-400 hover:bg-gray-800 disabled:opacity-50 bg-transparent"
+                                className="border-gray-600 text-rose-500/60 hover:bg-gray-800 disabled:opacity-50 bg-transparent"
                               >
                                 下一步
                                 <ChevronRight className="w-4 h-4 ml-1" />
@@ -585,7 +585,7 @@ export default function ProblemDetail() {
                                 </span>
                                 <div>
                                   <span className="font-medium text-sm text-gray-200">{step.title}</span>
-                                  <span className="text-gray-500 text-sm"> - {step.explanation}</span>
+                                  <span className="text-rose-600/70 text-sm"> - {step.explanation}</span>
                                 </div>
                               </div>
                             ))}
@@ -642,7 +642,7 @@ export default function ProblemDetail() {
                             {problem.interview.followUp.map((item, index) => (
                               <div key={index} className="border-l-2 border-cyan-500/50 pl-4">
                                 <p className="font-medium text-sm mb-1 text-gray-200">Q: {item.question}</p>
-                                <p className="text-gray-400 text-sm">A: {item.answer}</p>
+                                <p className="text-rose-500/60 text-sm">A: {item.answer}</p>
                               </div>
                             ))}
                           </div>

@@ -8,7 +8,7 @@ import { defineConfig } from "vite";
 const plugins = [react(), tailwindcss(), jsxLocPlugin()];
 
 export default defineConfig({
-  base: "/lmxsuanfadiy1/",
+  base: "/",
   plugins,
   resolve: {
     alias: {
