@@ -48,60 +48,71 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  
+
   /* Custom fonts */
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
 }
 
 :root {
-  --radius: 0.5rem;
-  
-  /* Dark theme - Clean algorithm platform style */
-  --background: oklch(0.13 0.01 240);
-  --foreground: oklch(0.92 0.01 240);
-  --card: oklch(0.16 0.01 240);
-  --card-foreground: oklch(0.92 0.01 240);
-  --popover: oklch(0.18 0.01 240);
-  --popover-foreground: oklch(0.92 0.01 240);
-  
-  /* Primary - Cyan/Teal accent */
-  --primary: oklch(0.72 0.14 180);
-  --primary-foreground: oklch(0.13 0.01 240);
-  
-  --secondary: oklch(0.2 0.01 240);
-  --secondary-foreground: oklch(0.85 0.01 240);
-  --muted: oklch(0.2 0.01 240);
-  --muted-foreground: oklch(0.6 0.01 240);
-  --accent: oklch(0.72 0.14 180);
-  --accent-foreground: oklch(0.13 0.01 240);
-  --destructive: oklch(0.65 0.2 25);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.25 0.01 240);
-  --input: oklch(0.2 0.01 240);
-  --ring: oklch(0.72 0.14 180);
-  
+  --radius: 0.75rem;
+
+  /* Warm Light Theme - Doraemon Inspired */
+  --background: oklch(0.98 0.01 60);
+  /* Warm white/cream */
+  --foreground: oklch(0.25 0.05 240);
+  /* Deep gray-blue */
+
+  --card: oklch(1 0 0 / 0.7);
+  /* Semi-transparent warm white */
+  --card-foreground: oklch(0.25 0.05 240);
+
+  --popover: oklch(1 0 0 / 0.9);
+  --popover-foreground: oklch(0.25 0.05 240);
+
+  /* Primary - Doraemon Blue */
+  --primary: oklch(0.6 0.15 240);
+  --primary-foreground: oklch(1 0 0);
+
+  /* Secondary - Soft Orange/Golden */
+  --secondary: oklch(0.85 0.1 70);
+  --secondary-foreground: oklch(0.25 0.05 240);
+
+  --muted: oklch(0.95 0.02 240);
+  --muted-foreground: oklch(0.45 0.05 240);
+
+  /* Accent - Warm Amber */
+  --accent: oklch(0.8 0.15 60);
+  --accent-foreground: oklch(0.2 0.05 240);
+
+  --destructive: oklch(0.6 0.18 25);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.9 0.02 240);
+  --input: oklch(0.95 0.01 240);
+  --ring: oklch(0.6 0.15 240);
+
   /* Chart colors */
-  --chart-1: oklch(0.72 0.14 180);
-  --chart-2: oklch(0.7 0.15 280);
-  --chart-3: oklch(0.75 0.15 50);
-  --chart-4: oklch(0.7 0.18 25);
-  --chart-5: oklch(0.75 0.15 145);
-  
+  --chart-1: oklch(0.6 0.15 240);
+  --chart-2: oklch(0.75 0.1 70);
+  --chart-3: oklch(0.7 0.12 180);
+  --chart-4: oklch(0.65 0.15 30);
+  --chart-5: oklch(0.6 0.1 200);
+
   /* Sidebar */
-  --sidebar: oklch(0.11 0.01 240);
-  --sidebar-foreground: oklch(0.85 0.01 240);
-  --sidebar-primary: oklch(0.72 0.14 180);
-  --sidebar-primary-foreground: oklch(0.13 0.01 240);
-  --sidebar-accent: oklch(0.18 0.01 240);
-  --sidebar-accent-foreground: oklch(0.92 0.01 240);
-  --sidebar-border: oklch(0.22 0.01 240);
-  --sidebar-ring: oklch(0.72 0.14 180);
+  --sidebar: oklch(0.96 0.01 240 / 0.8);
+  --sidebar-foreground: oklch(0.3 0.05 240);
+  --sidebar-primary: oklch(0.6 0.15 240);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.9 0.03 240);
+  --sidebar-accent-foreground: oklch(0.2 0.05 240);
+  --sidebar-border: oklch(0.88 0.02 240);
+  --sidebar-ring: oklch(0.6 0.15 240);
 }
 
 .dark {
   --background: oklch(0.13 0.01 240);
   --foreground: oklch(0.92 0.01 240);
-  --card: oklch(0.16 0.01 240);
+  --card: oklch(0.16 0.01 240 / 0.8);
   --card-foreground: oklch(0.92 0.01 240);
   --popover: oklch(0.18 0.01 240);
   --popover-foreground: oklch(0.92 0.01 240);
@@ -123,7 +134,7 @@
   --chart-3: oklch(0.75 0.15 50);
   --chart-4: oklch(0.7 0.18 25);
   --chart-5: oklch(0.75 0.15 145);
-  --sidebar: oklch(0.11 0.01 240);
+  --sidebar: oklch(0.11 0.01 240 / 0.8);
   --sidebar-foreground: oklch(0.85 0.01 240);
   --sidebar-primary: oklch(0.72 0.14 180);
   --sidebar-primary-foreground: oklch(0.13 0.01 240);
@@ -137,10 +148,30 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, sans-serif;
+    background-image: url('/lmxsuanfadiy1/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Main container glassmorphism */
+  main {
+    backdrop-filter: blur(12px) saturate(180%);
+    background-color: var(--background);
+    flex: 1;
+  }
+
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -152,21 +183,27 @@
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
   }
-  
+
   /* Custom scrollbar */
   ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
   }
+
   ::-webkit-scrollbar-track {
-    background: oklch(0.13 0.01 240);
+    background: transparent;
   }
+
   ::-webkit-scrollbar-thumb {
-    background: oklch(0.25 0.01 240);
-    border-radius: 3px;
+    background: oklch(0.6 0.15 240 / 0.3);
+    border-radius: 4px;
+    border: 2px solid transparent;
+    background-clip: content-box;
   }
+
   ::-webkit-scrollbar-thumb:hover {
-    background: oklch(0.35 0.01 240);
+    background: oklch(0.6 0.15 240 / 0.5);
+    background-clip: content-box;
   }
 }
 
@@ -198,7 +235,7 @@
       max-width: 1400px;
     }
   }
-  
+
   /* Code block styling */
   .code-block {
     background: oklch(0.11 0.01 240);
@@ -209,22 +246,46 @@
     line-height: 1.7;
     overflow-x: auto;
   }
-  
+
   .code-block pre {
     margin: 0;
     padding: 1rem;
   }
-  
+
   /* Syntax highlighting classes */
-  .syntax-keyword { color: oklch(0.75 0.15 280); }
-  .syntax-type { color: oklch(0.72 0.14 180); }
-  .syntax-string { color: oklch(0.75 0.15 145); }
-  .syntax-number { color: oklch(0.75 0.15 50); }
-  .syntax-comment { color: oklch(0.5 0.01 240); font-style: italic; }
-  .syntax-function { color: oklch(0.75 0.15 50); }
-  .syntax-variable { color: oklch(0.9 0.01 240); }
-  .syntax-operator { color: oklch(0.75 0.15 280); }
-  
+  .syntax-keyword {
+    color: oklch(0.75 0.15 280);
+  }
+
+  .syntax-type {
+    color: oklch(0.72 0.14 180);
+  }
+
+  .syntax-string {
+    color: oklch(0.75 0.15 145);
+  }
+
+  .syntax-number {
+    color: oklch(0.75 0.15 50);
+  }
+
+  .syntax-comment {
+    color: oklch(0.5 0.01 240);
+    font-style: italic;
+  }
+
+  .syntax-function {
+    color: oklch(0.75 0.15 50);
+  }
+
+  .syntax-variable {
+    color: oklch(0.9 0.01 240);
+  }
+
+  .syntax-operator {
+    color: oklch(0.75 0.15 280);
+  }
+
   /* Line numbers */
   .line-number {
     color: oklch(0.4 0.01 240);
@@ -234,7 +295,7 @@
     min-width: 2.5rem;
     display: inline-block;
   }
-  
+
   /* Category tag */
   .category-tag {
     display: inline-flex;
@@ -249,18 +310,18 @@
     color: oklch(0.7 0.01 240);
     transition: all 0.2s ease;
   }
-  
+
   .category-tag:hover {
     border-color: oklch(0.72 0.14 180);
     color: oklch(0.72 0.14 180);
   }
-  
+
   .category-tag.active {
     background: oklch(0.72 0.14 180 / 0.15);
     border-color: oklch(0.72 0.14 180);
     color: oklch(0.72 0.14 180);
   }
-  
+
   /* Category card */
   .category-card {
     padding: 1rem 1.25rem;
@@ -270,16 +331,16 @@
     transition: all 0.2s ease;
     cursor: pointer;
   }
-  
+
   .category-card:hover {
     border-color: oklch(0.35 0.01 240);
   }
-  
+
   .category-card.selected {
     background: oklch(0.72 0.14 180 / 0.1);
     border-color: oklch(0.72 0.14 180);
   }
-  
+
   /* Step card */
   .step-card {
     background: oklch(0.16 0.01 240);
@@ -287,48 +348,50 @@
     border-radius: 0.5rem;
     transition: all 0.2s ease;
   }
-  
+
   .step-card:hover {
     border-color: oklch(0.3 0.01 240);
   }
-  
+
   .step-card.expanded {
     border-color: oklch(0.72 0.14 180);
   }
-  
+
   /* Difficulty badge */
-  .difficulty-easy { 
-    background: oklch(0.75 0.15 145 / 0.15); 
-    color: oklch(0.75 0.15 145); 
+  .difficulty-easy {
+    background: oklch(0.75 0.15 145 / 0.15);
+    color: oklch(0.75 0.15 145);
     padding: 0.125rem 0.5rem;
     border-radius: 0.25rem;
     font-size: 0.75rem;
     font-weight: 500;
   }
-  .difficulty-medium { 
-    background: oklch(0.75 0.15 50 / 0.15); 
-    color: oklch(0.75 0.15 50); 
+
+  .difficulty-medium {
+    background: oklch(0.75 0.15 50 / 0.15);
+    color: oklch(0.75 0.15 50);
     padding: 0.125rem 0.5rem;
     border-radius: 0.25rem;
     font-size: 0.75rem;
     font-weight: 500;
   }
-  .difficulty-hard { 
-    background: oklch(0.7 0.18 25 / 0.15); 
-    color: oklch(0.7 0.18 25); 
+
+  .difficulty-hard {
+    background: oklch(0.7 0.18 25 / 0.15);
+    color: oklch(0.7 0.18 25);
     padding: 0.125rem 0.5rem;
     border-radius: 0.25rem;
     font-size: 0.75rem;
     font-weight: 500;
   }
-  
+
   /* Learning path step */
   .path-step {
     display: flex;
     align-items: center;
     gap: 0.75rem;
   }
-  
+
   .path-step-number {
     width: 1.75rem;
     height: 1.75rem;
@@ -341,7 +404,7 @@
     background: oklch(0.72 0.14 180);
     color: oklch(0.13 0.01 240);
   }
-  
+
   /* Info box */
   .info-box {
     background: oklch(0.72 0.14 180 / 0.1);
@@ -349,7 +412,7 @@
     padding: 1rem 1.25rem;
     border-radius: 0 0.5rem 0.5rem 0;
   }
-  
+
   /* Problem list item */
   .problem-item {
     display: flex;
@@ -361,12 +424,12 @@
     border-radius: 0.5rem;
     transition: all 0.2s ease;
   }
-  
+
   .problem-item:hover {
     border-color: oklch(0.72 0.14 180);
     background: oklch(0.18 0.01 240);
   }
-  
+
   /* Tab button */
   .tab-btn {
     padding: 0.75rem 1.5rem;
@@ -376,11 +439,11 @@
     border-bottom: 2px solid transparent;
     transition: all 0.2s ease;
   }
-  
+
   .tab-btn:hover {
     color: oklch(0.8 0.01 240);
   }
-  
+
   .tab-btn.active {
     color: oklch(0.72 0.14 180);
     border-bottom-color: oklch(0.72 0.14 180);
@@ -389,13 +452,27 @@
 
 /* Animation keyframes */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideIn {
-  from { opacity: 0; transform: translateX(-10px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .animate-fade-in {
